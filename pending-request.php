@@ -1,7 +1,7 @@
 <?php ob_start();?>
 
 
-    <?php
+<?php
 include "INCLUDES/db.php"
 ?>
 <?php
@@ -101,11 +101,8 @@ include "INCLUDES/navigation.php"
 
                                     <th scope="col">Purpose</th>
                                     <th scope="col">Status</th>
-                                    <th scope="col">statuss</th>
 
-                                    <th scope="col">Approve</th>
-                                    <th scope="col">Unapprove</th>
-
+                                    <th scope="col">Action</th>
 
                                 </tr>
                             </thead>
@@ -114,6 +111,7 @@ include "INCLUDES/navigation.php"
 
 
 
+                             <!-- //fetching data from database -->
                                 <?php
 $query = "SELECT * FROM Request";
 $select_meeting_query = mysqli_query($connection, $query);
@@ -125,7 +123,6 @@ while ($row = mysqli_fetch_assoc($select_meeting_query)) {
     $NameOfScheduler = $row['NameOfScheduler'];
     $PurposeOfMeeting = $row['PurposeOfMeeting'];
     $Status = $row['is_accepted'];
-    $statuss = $row['statuss'];
 
     ?>
 
@@ -136,16 +133,27 @@ while ($row = mysqli_fetch_assoc($select_meeting_query)) {
                                     <td><?php echo $NameOfDepartment ?></td>
 
                                     <td><?php echo $PurposeOfMeeting ?></td>
-                                    <td><?php echo $Status ?></td>
-                                    <td><?php echo $statuss ?></td>
+                                    <td><?php echo $Status == 1 ? "Approved" : "Not Approved" ?></td>
 
 
-                                                        <?php
-echo "<td><a class='text-success'href='pending-request.php?approve=$id'>APPROVE</a></td>";
-    echo "<td><a class='text-danger' href='pending-request.php?unapprove=$id'>UNAPPROVE</a></td>";
+                                    <form action='pending-request.php' method='post'>
+                                        <input type="hidden" name="is_accepted" value=<?php echo "$Status"; ?> />
+                                        <input type="hidden" name="id" value=<?=$id;?> />
 
+                                        <?php
+switch ($Status) {
+
+        case '0':
+            echo "<td><button type='submit' name='submit' class='btn btn-success'>APPROVE</button></td> ";
+            break;
+        default:
+            echo "<td><button type='submit' name='submit' class='btn btn-danger'>UNAPPROVE</button></td>";
+
+    }
     ?>
 
+
+                                    </form>
                                 </tr>
 
                                 <?php
@@ -153,206 +161,55 @@ echo "<td><a class='text-success'href='pending-request.php?approve=$id'>APPROVE<
 
                             </tbody>
                         </table>
-<?php
-if (isset($_GET['approve'])) {
+                        <?php
 
-    $the_approve = $_GET['approve'];
+if (isset($_POST['id'])) {
 
-    $query = "UPDATE Request SET statuss = 'APPROVED' ";
-    $approve_query = mysqli_query($connection, $query);
-    header("Location: pending-request.php");
-}
+    if ($_POST['is_accepted'] == '1') {
+        $query = "UPDATE Request SET is_accepted = '0' WHERE id = {$_POST['id']}";
+        $approve_query = mysqli_query($connection, $query);
+        header("Location: pending-request.php");
+    } else {
+        $query = "UPDATE Request SET is_accepted = '1' WHERE id = {$_POST['id']}";
+        $approve_query = mysqli_query($connection, $query);
+        header("Location: pending-request.php");
+    }
 
-if (isset($_GET['unapprove'])) {
-
-    $the_approve = $_GET['unapprove'];
-
-    $query = "UPDATE Request SET statuss = 'UNAPPROVED' ";
-    $unapprove_query = mysqli_query($connection, $query);
-    header("Location: pending-request.php");
 }
 
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    </<a>
-                    <!-- <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title m-b-0">Static Table With Checkboxes</h5>
-                            </div>
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead class="thead-light">
-                                            <tr>
-                                                <th>
-                                                    <label class="customcheckbox m-b-20">
-                                                        <input type="checkbox" id="mainCheckbox" />
-                                                        <span class="checkmark"></span>
-                                                    </label>
-                                                </th>
-                                                <th scope="col">Rendering engine</th>
-                                                <th scope="col">Browser</th>
-                                                <th scope="col">Platform(s)</th>
-                                                <th scope="col">Engine version</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="customtable">
-                                            <tr>
-                                                <th>
-                                                    <label class="customcheckbox">
-                                                        <input type="checkbox" class="listCheckbox" />
-                                                        <span class="checkmark"></span>
-                                                    </label>
-                                                </th>
-                                                <td>Trident</td>
-                                                <td>Internet Explorer 4.0</td>
-                                                <td>Win 95+</td>
-                                                <td>4</td>
-                                            </tr>
-                                            <tr>
-                                                <th>
-                                                    <label class="customcheckbox">
-                                                        <input type="checkbox" class="listCheckbox" />
-                                                        <span class="checkmark"></span>
-                                                    </label>
-                                                </th>
-                                                <td>Trident</td>
-                                                <td>Internet Explorer 5.0</td>
-                                                <td>Win 95+</td>
-                                                <td>5</td>
-                                            </tr>
-                                            <tr>
-                                                <th>
-                                                    <label class="customcheckbox">
-                                                        <input type="checkbox" class="listCheckbox" />
-                                                        <span class="checkmark"></span>
-                                                    </label>
-                                                </th>
-                                                <td>Trident</td>
-                                                <td>Internet Explorer 4.0</td>
-                                                <td>Win 95+</td>
-                                                <td>4</td>
-                                            </tr>
-                                            <tr>
-                                                <th>
-                                                    <label class="customcheckbox">
-                                                        <input type="checkbox" class="listCheckbox" />
-                                                        <span class="checkmark"></span>
-                                                    </label>
-                                                </th>
-                                                <td>Trident</td>
-                                                <td>Internet Explorer 5.0</td>
-                                                <td>Win 95+</td>
-                                                <td>5</td>
-                                            </tr>
-                                            <tr>
-                                                <th>
-                                                    <label class="customcheckbox">
-                                                        <input type="checkbox" class="listCheckbox" />
-                                                        <span class="checkmark"></span>
-                                                    </label>
-                                                </th>
-                                                <td>Trident</td>
-                                                <td>Internet Explorer 5.5</td>
-                                                <td>Win 95+</td>
-                                                <td>5.5</td>
-                                            </tr>
-                                            <tr>
-                                                <th>
-                                                    <label class="customcheckbox">
-                                                        <input type="checkbox" class="listCheckbox" />
-                                                        <span class="checkmark"></span>
-                                                    </label>
-                                                </th>
-                                                <td>Trident</td>
-                                                <td>Internet Explorer 6</td>
-                                                <td>Win 98+</td>
-                                                <td>6</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                        </div> -->
-                    <!-- <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Collspan Table Example</h5>
-                            </div>
-                            <table class="table">
-                              <thead>
-                                <tr>
-                                  <th scope="col">#</th>
-                                  <th scope="col">First</th>
-                                  <th scope="col">Last</th>
-                                  <th scope="col">Handle</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <th scope="row">1</th>
-                                  <td>Mark</td>
-                                  <td>Otto</td>
-                                  <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">2</th>
-                                  <td>Jacob</td>
-                                  <td>Thornton</td>
-                                  <td>@fat</td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">3</th>
-                                  <td colspan="2">Larry the Bird</td>
-                                  <td>@twitter</td>
-                                </tr>
-                              </tbody>
-                            </table>
-                        </div> -->
+                        </<a>
+                    </div>
                 </div>
             </div>
+            <!-- ============================================================== -->
+            <!-- End PStart Date Content -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Right sidebar -->
+            <!-- ============================================================== -->
+            <!-- .right-sidebar -->
+            <!-- ============================================================== -->
+            <!-- End Right sidebar -->
+            <!-- ============================================================== -->
         </div>
         <!-- ============================================================== -->
-        <!-- End PStart Date Content -->
+        <!-- End Container fluid  -->
         <!-- ============================================================== -->
         <!-- ============================================================== -->
-        <!-- Right sidebar -->
+        <!-- footer -->
         <!-- ============================================================== -->
-        <!-- .right-sidebar -->
+        <footer class="footer text-center">
+            All Rights Reserved by Matrix-admin. Designed and Developed by <a
+                href="https://wrappixel.com">WrapPixel</a>.
+        </footer>
         <!-- ============================================================== -->
-        <!-- End Right sidebar -->
+        <!-- End footer -->
         <!-- ============================================================== -->
     </div>
     <!-- ============================================================== -->
-    <!-- End Container fluid  -->
+    <!-- End Page wrapper  -->
     <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- footer -->
-    <!-- ============================================================== -->
-    <footer class="footer text-center">
-        All Rights Reserved by Matrix-admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
-    </footer>
-    <!-- ============================================================== -->
-    <!-- End footer -->
-    <!-- ============================================================== -->
-</div>
-<!-- ============================================================== -->
-<!-- End Page wrapper  -->
-<!-- ============================================================== -->
 </div>
 <!-- ============================================================== -->
 <!-- End Wrapper -->

@@ -79,33 +79,53 @@ include "INCLUDES/navigation.php"
             <!-- ============================================================== -->
 
             <?php
+// if (isset($_POST['submit'])) {
+// echo "<h1>HELLO WORLD</h1>";
+
+// if ($_POST['NameOfDepartment'] == "" || $_POST['NameOfScheduler'] == "" || $_POST['PurposeOfMeeting'] == "") {
+//     echo '<div class="alert alert-danger alert-dismissable fade show" id="flash-msg">
+//       <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+//    <h4><i class="icon fa fa-check"></i>ALL FIELDS ARE NEEDED!</h4>
+//     </div>';
+// }
+// else {
+// $id = $_POST['id'];
+// $NameOfDepartment = $_POST['NameOfDepartment'];
+// $NameOfScheduler = $_POST['NameOfScheduler'];
+// $PurposeOfMeeting = $_POST['PurposeOfMeeting'];
+// $Gender = $_POST['Gender'];
+
+// $query = "INSERT INTO Request(NameOfDepartment, NameOfScheduler, Gender)";
+// $query .= "VALUES ('{$NameOfDepartment}' ,'{$NameOfScheduler}' ,'{$PurposeOfMeeting}', '{$Gender}')";
+
+//         $create_post_query = mysqli_query($connection, $query);
+//         if ($create_post_query) {
+//             die("QUERY FAILED" . mysqli_error($connection));
+//   }
+
+// }
+
 if (isset($_POST['submit'])) {
-    // echo "<h1>HELLO WORLD</h1>";
 
-    if ($_POST['NameOfDepartment'] == "" || $_POST['NameOfScheduler'] == "" || $_POST['PurposeOfMeeting'] == "") {
-        echo '<div class="alert alert-danger alert-dismissable fade show" id="flash-msg">
-            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-            <h4><i class="icon fa fa-check"></i>ALL FIELDS ARE NEEDED!</h4>
-            </div>';
-    } else {
+    $NameOfDepartment = $_POST['NameOfDepartment'];
 
-        $NameOfDepartment = $_POST['NameOfDepartment'];
-        $NameOfScheduler = $_POST['NameOfScheduler'];
-        $PurposeOfMeeting = $_POST['PurposeOfMeeting'];
+    $NameOfDepartment = $_POST['NameOfDepartment'];
+    $NameOfScheduler = $_POST['NameOfScheduler'];
+    $PurposeOfMeeting = $_POST['PurposeOfMeeting'];
+    $gender = $_POST['gender'];
+    // $status = $_POST['statuss'];
 
-        $query = "INSERT INTO Request(NameOfDepartment, NameOfScheduler, PurposeOfMeeting)";
-        $query .= "VALUES ('YES' ,'YES' ,'YES')";
+    $query = "INSERT INTO Request(NameOfDepartment, NameOfScheduler, PurposeOfMeeting, gender)";
+    $query .= " VALUES ('{$NameOfDepartment}', '{$NameOfScheduler}', '{$PurposeOfMeeting}', '{$gender}')";
+    mysqli_query($connection, $query);
 
-        // $query .= "VALUES ('{$NameOfDepartment}' ,'{$NameOfScheduler}' , '{$PurposeOfMeeting}')";
-        $create_post_query = mysqli_query($connection, $query);
-        if ($create_post_query) {
-            die("QUERY FAILED" . mysqli_error($connection));
-        }}}
+
+}
 ?>
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
-                        ` <form class="form-horizontal" action="form-basic.php" method="post"
+                        <form class="form-horizontal" action="form-basic.php" method="POST"
                             enctype="multipart/form-data">
                             <div class="card-body">
                                 <h4 class="card-title">Meeting Info</h4>
@@ -115,7 +135,7 @@ if (isset($_POST['submit'])) {
                                     <div class="col-sm-9">
                                         <input type="text" name="NameOfDepartment" class="form-control" id="fname"
                                             placeholder="Name of Department Here">
-                                    </div>`
+                                    </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="lname" class="col-sm-3 text-right control-label col-form-label">Name Of
@@ -129,13 +149,25 @@ if (isset($_POST['submit'])) {
                                     <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Purpose
                                         of Meeting</label>
                                     <div class="col-sm-9">
-                                        <textarea name="PurposeOfMeeting" class="form-control"></textarea>
+                                        <textarea type="text" name="PurposeOfMeeting" class="form-control"></textarea>
                                     </div>
                                 </div>
+                                <div class="form-group row">
+                                    <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Gender
+                                    </label>
+                                    <select name="Gender" id="">
+                                        <option value="volvo">Male</option>
+                                        <option value="saab">Female</option>
+                                        <option value="opel">Other</option>
+
+                                    </select>
+                                </div>
+
                             </div>
                             <div class="border-top">
                                 <div class="card-body">
-                                    <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+                                    <button type="submit" class="btn btn-primary" name="submit">submit</button>
+                                     <!-- <input type="submit" name="submit" value="submit"> -->
                                 </div>
                             </div>
                         </form>
@@ -144,33 +176,33 @@ if (isset($_POST['submit'])) {
 
 
 
+            </div>
         </div>
-    </div>
-    <!-- editor -->
+        <!-- editor -->
 
+        <!-- ============================================================== -->
+        <!-- End PAge Content -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Right sidebar -->
+        <!-- ============================================================== -->
+        <!-- .right-sidebar -->
+        <!-- ============================================================== -->
+        <!-- End Right sidebar -->
+        <!-- ============================================================== -->
+    </div>
     <!-- ============================================================== -->
-    <!-- End PAge Content -->
+    <!-- End Container fluid  -->
     <!-- ============================================================== -->
     <!-- ============================================================== -->
-    <!-- Right sidebar -->
+    <!-- footer -->
     <!-- ============================================================== -->
-    <!-- .right-sidebar -->
+    <footer class="footer text-center">
+        All Rights Reserved by Matrix-admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
+    </footer>
     <!-- ============================================================== -->
-    <!-- End Right sidebar -->
+    <!-- End footer -->
     <!-- ============================================================== -->
-</div>
-<!-- ============================================================== -->
-<!-- End Container fluid  -->
-<!-- ============================================================== -->
-<!-- ============================================================== -->
-<!-- footer -->
-<!-- ============================================================== -->
-<footer class="footer text-center">
-    All Rights Reserved by Matrix-admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
-</footer>
-<!-- ============================================================== -->
-<!-- End footer -->
-<!-- ============================================================== -->
 </div>
 <!-- ============================================================== -->
 <!-- End Page wrapper  -->
