@@ -1,3 +1,5 @@
+<?php include "INCLUDES/db.php";
+?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
@@ -98,33 +100,33 @@ include "INCLUDES/navigation.php"
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
                 <div class="row">
-                <!-- Column -->
+                    <!-- Column -->
 
-                <div class="col-md-6 col-lg-2 col-xlg-3">
-                    <a href="./index.php">
-                        <div class="card card-hover">
-                            <div class="box bg-cyan text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-view-dashboard"></i></h1>
-                                <h6 class="text-white">Dashboard</h6>
+                    <div class="col-md-6 col-lg-2 col-xlg-3">
+                        <a href="./index.php">
+                            <div class="card card-hover">
+                                <div class="box bg-cyan text-center">
+                                    <h1 class="font-light text-white"><i class="mdi mdi-view-dashboard"></i></h1>
+                                    <h6 class="text-white">Dashboard</h6>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
+                        </a>
+                    </div>
 
 
-                <!-- Column -->
-                <div class="col-md-6 col-lg-4 col-xlg-3">
-                    <a href="./charts.php">
-                        <div class="card card-hover">
-                            <div class="box bg-success text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-chart-areaspline"></i></h1>
-                                <h6 class="text-white">Charts</h6>
+                    <!-- Column -->
+                    <div class="col-md-6 col-lg-4 col-xlg-3">
+                        <a href="./charts.php">
+                            <div class="card card-hover">
+                                <div class="box bg-success text-center">
+                                    <h1 class="font-light text-white"><i class="mdi mdi-chart-areaspline"></i></h1>
+                                    <h6 class="text-white">Charts</h6>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- Column -->
-                <!-- <div class="col-md-6 col-lg-2 col-xlg-3">
+                        </a>
+                    </div>
+                    <!-- Column -->
+                    <!-- <div class="col-md-6 col-lg-2 col-xlg-3">
                     <div class="card card-hover">
                         <div class="box bg-warning text-center">
                             <h1 class="font-light text-white"><i class="mdi mdi-collage"></i></h1>
@@ -132,19 +134,19 @@ include "INCLUDES/navigation.php"
                         </div>
                     </div>
                 </div> -->
-                <!-- Column -->
-                <div class="col-md-6 col-lg-2 col-xlg-3">
-                    <a href="./tables.php">
-                        <div class="card card-hover">
-                            <div class="box bg-danger text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-border-outside"></i></h1>
-                                <h6 class="text-white">Tables</h6>
+                    <!-- Column -->
+                    <div class="col-md-6 col-lg-2 col-xlg-3">
+                        <a href="/pending-request.php">
+                            <div class="card card-hover">
+                                <div class="box bg-danger text-center">
+                                    <h1 class="font-light text-white"><i class="mdi mdi-border-outside"></i></h1>
+                                    <h6 class="text-white">Tables</h6>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- Column -->
-                <!-- <div class="col-md-6 col-lg-2 col-xlg-3">
+                        </a>
+                    </div>
+                    <!-- Column -->
+                    <!-- <div class="col-md-6 col-lg-2 col-xlg-3">
                     <div class="card card-hover">
                         <div class="box bg-info text-center">
                             <h1 class="font-light text-white"><i class="mdi mdi-arrow-all"></i></h1>
@@ -152,20 +154,20 @@ include "INCLUDES/navigation.php"
                         </div>
                     </div>
                 </div> -->
-                <!-- Column -->
-                <!-- Column -->
-                <div class="col-md-6 col-lg-4 col-xlg-3">
-                    <a href="./form-basic.php">
-                        <div class="card card-hover">
-                            <div class="box bg-primary text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-receipt"></i></h1>
-                                <h6 class="text-white">Forms</h6>
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="col-md-6 col-lg-4 col-xlg-3">
+                        <a href="./form-basic.php">
+                            <div class="card card-hover">
+                                <div class="box bg-primary text-center">
+                                    <h1 class="font-light text-white"><i class="mdi mdi-receipt"></i></h1>
+                                    <h6 class="text-white">Forms</h6>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- Column -->
-                <!-- <div class="col-md-6 col-lg-2 col-xlg-3">
+                        </a>
+                    </div>
+                    <!-- Column -->
+                    <!-- <div class="col-md-6 col-lg-2 col-xlg-3">
                     <div class="card card-hover">
                         <div class="box bg-info text-center">
                             <h1 class="font-light text-white"><i class="mdi mdi-relative-scale"></i></h1>
@@ -173,8 +175,8 @@ include "INCLUDES/navigation.php"
                         </div>
                     </div>
                 </div> -->
-                <!-- Column -->
-                <!-- <div class="col-md-6 col-lg-2 col-xlg-3">
+                    <!-- Column -->
+                    <!-- <div class="col-md-6 col-lg-2 col-xlg-3">
                     <div class="card card-hover">
                         <div class="box bg-cyan text-center">
                             <h1 class="font-light text-white"><i class="mdi mdi-pencil"></i></h1>
@@ -182,8 +184,8 @@ include "INCLUDES/navigation.php"
                         </div>
                     </div>
                 </div> -->
-                <!-- Column -->
-                <!-- <div class="col-md-6 col-lg-2 col-xlg-3">
+                    <!-- Column -->
+                    <!-- <div class="col-md-6 col-lg-2 col-xlg-3">
                     <div class="card card-hover">
                         <div class="box bg-success text-center">
                             <h1 class="font-light text-white"><i class="mdi mdi-calendar-check"></i></h1>
@@ -191,8 +193,8 @@ include "INCLUDES/navigation.php"
                         </div>
                     </div>
                 </div> -->
-                <!-- Column -->
-                <!-- <div class="col-md-6 col-lg-2 col-xlg-3">
+                    <!-- Column -->
+                    <!-- <div class="col-md-6 col-lg-2 col-xlg-3">
                     <div class="card card-hover">
                         <div class="box bg-warning text-center">
                             <h1 class="font-light text-white"><i class="mdi mdi-alert"></i></h1>
@@ -200,21 +202,48 @@ include "INCLUDES/navigation.php"
                         </div>
                     </div>
                 </div> -->
-                <!-- Column -->
-            </div>
+                    <!-- Column -->
+                </div>
                 <div class="row">
                     <div class="col-md-6">
-                         <div class="card">
+                        <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Latest Posts</h4>
                             </div>
                             <div class="comment-widgets scrollable">
                                 <!-- Comment Row -->
                                 <div class="d-flex flex-row comment-row m-t-0">
-                                    <div class="p-2"><img src="assets/images/users/1.jpg" alt="user" width="50" class="rounded-circle"></div>
+                                    <div class="p-2"><img src="assets/images/users/1.jpg" alt="user" width="50"
+                                            class="rounded-circle"></div>
                                     <div class="comment-text w-100">
+                                        <?php
+$query = "SELECT * FROM posts WHERE id ";
+$select_all_query = mysqli_query($connection, $query);
+
+while ($row = mysqli_fetch_assoc($select_all_query)) {
+
+    echo "hello";
+    $name = $row['name'];
+    $image = $row['image'];
+    $post = $row['posts'];
+
+    ?>
                                         <h6 class="font-medium">James Anderson</h6>
-                                        <span class="m-b-15 d-block">Lorem Ipsum is simply dummy text of the printing and type setting industry. </span>
+                                        <span class="m-b-15 d-block">Lorem Ipsum is simply dummy text of the printing
+                                            and type setting industry. </span>
+
+
+                                        <?php
+
+}?>
+
+                                        ?>
+
+
+
+
+
+
                                         <div class="comment-footer">
                                             <span class="text-muted float-right">April 14, 2016</span>
                                             <button type="button" class="btn btn-cyan btn-sm">Edit</button>
@@ -225,10 +254,12 @@ include "INCLUDES/navigation.php"
                                 </div>
                                 <!-- Comment Row -->
                                 <div class="d-flex flex-row comment-row">
-                                    <div class="p-2"><img src="assets/images/users/4.jpg" alt="user" width="50" class="rounded-circle"></div>
+                                    <div class="p-2"><img src="assets/images/users/4.jpg" alt="user" width="50"
+                                            class="rounded-circle"></div>
                                     <div class="comment-text active w-100">
                                         <h6 class="font-medium">Michael Jorden</h6>
-                                        <span class="m-b-15 d-block">Lorem Ipsum is simply dummy text of the printing and type setting industry. </span>
+                                        <span class="m-b-15 d-block">Lorem Ipsum is simply dummy text of the printing
+                                            and type setting industry. </span>
                                         <div class="comment-footer">
                                             <span class="text-muted float-right">May 10, 2016</span>
                                             <button type="button" class="btn btn-cyan btn-sm">Edit</button>
@@ -239,10 +270,12 @@ include "INCLUDES/navigation.php"
                                 </div>
                                 <!-- Comment Row -->
                                 <div class="d-flex flex-row comment-row">
-                                    <div class="p-2"><img src="assets/images/users/5.jpg" alt="user" width="50" class="rounded-circle"></div>
+                                    <div class="p-2"><img src="assets/images/users/5.jpg" alt="user" width="50"
+                                            class="rounded-circle"></div>
                                     <div class="comment-text w-100">
                                         <h6 class="font-medium">Johnathan Doeting</h6>
-                                        <span class="m-b-15 d-block">Lorem Ipsum is simply dummy text of the printing and type setting industry. </span>
+                                        <span class="m-b-15 d-block">Lorem Ipsum is simply dummy text of the printing
+                                            and type setting industry. </span>
                                         <div class="comment-footer">
                                             <span class="text-muted float-right">August 1, 2016</span>
                                             <button type="button" class="btn btn-cyan btn-sm">Edit</button>
@@ -253,7 +286,7 @@ include "INCLUDES/navigation.php"
                                 </div>
                             </div>
                         </div>
-                         <!-- Card -->
+                        <!-- Card -->
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">To Do List</h4>
@@ -263,21 +296,36 @@ include "INCLUDES/navigation.php"
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox" class="custom-control-input" id="customCheck">
                                                 <label class="custom-control-label todo-label" for="customCheck">
-                                                    <span class="todo-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span> <span class="badge badge-pill badge-danger float-right">Today</span>
+                                                    <span class="todo-desc">Lorem Ipsum is simply dummy text of the
+                                                        printing and typesetting industry.</span> <span
+                                                        class="badge badge-pill badge-danger float-right">Today</span>
                                                 </label>
                                             </div>
                                             <ul class="list-style-none assignedto">
-                                                <li class="assignee"><img class="rounded-circle" width="40" src="assets/images/users/1.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Steave"></li>
-                                                <li class="assignee"><img class="rounded-circle" width="40" src="assets/images/users/2.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Jessica"></li>
-                                                <li class="assignee"><img class="rounded-circle" width="40" src="assets/images/users/3.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Priyanka"></li>
-                                                <li class="assignee"><img class="rounded-circle" width="40" src="assets/images/users/4.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Selina"></li>
+                                                <li class="assignee"><img class="rounded-circle" width="40"
+                                                        src="assets/images/users/1.jpg" alt="user" data-toggle="tooltip"
+                                                        data-placement="top" title="" data-original-title="Steave"></li>
+                                                <li class="assignee"><img class="rounded-circle" width="40"
+                                                        src="assets/images/users/2.jpg" alt="user" data-toggle="tooltip"
+                                                        data-placement="top" title="" data-original-title="Jessica">
+                                                </li>
+                                                <li class="assignee"><img class="rounded-circle" width="40"
+                                                        src="assets/images/users/3.jpg" alt="user" data-toggle="tooltip"
+                                                        data-placement="top" title="" data-original-title="Priyanka">
+                                                </li>
+                                                <li class="assignee"><img class="rounded-circle" width="40"
+                                                        src="assets/images/users/4.jpg" alt="user" data-toggle="tooltip"
+                                                        data-placement="top" title="" data-original-title="Selina"></li>
                                             </ul>
                                         </li>
                                         <li class="list-group-item todo-item" data-role="task">
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox" class="custom-control-input" id="customCheck1">
                                                 <label class="custom-control-label todo-label" for="customCheck1">
-                                                    <span class="todo-desc">Lorem Ipsum is simply dummy text of the printing</span><span class="badge badge-pill badge-primary float-right">1 week </span>
+                                                    <span class="todo-desc">Lorem Ipsum is simply dummy text of the
+                                                        printing</span><span
+                                                        class="badge badge-pill badge-primary float-right">1 week
+                                                    </span>
                                                 </label>
                                             </div>
                                             <div class="item-date"> 26 jun 2017</div>
@@ -286,19 +334,28 @@ include "INCLUDES/navigation.php"
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox" class="custom-control-input" id="customCheck2">
                                                 <label class="custom-control-label todo-label" for="customCheck2">
-                                                    <span class="todo-desc">Give Purchase report to</span> <span class="badge badge-pill badge-info float-right">Yesterday</span>
+                                                    <span class="todo-desc">Give Purchase report to</span> <span
+                                                        class="badge badge-pill badge-info float-right">Yesterday</span>
                                                 </label>
                                             </div>
                                             <ul class="list-style-none assignedto">
-                                                <li class="assignee"><img class="rounded-circle" width="40" src="assets/images/users/3.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Priyanka"></li>
-                                                <li class="assignee"><img class="rounded-circle" width="40" src="assets/images/users/4.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Selina"></li>
+                                                <li class="assignee"><img class="rounded-circle" width="40"
+                                                        src="assets/images/users/3.jpg" alt="user" data-toggle="tooltip"
+                                                        data-placement="top" title="" data-original-title="Priyanka">
+                                                </li>
+                                                <li class="assignee"><img class="rounded-circle" width="40"
+                                                        src="assets/images/users/4.jpg" alt="user" data-toggle="tooltip"
+                                                        data-placement="top" title="" data-original-title="Selina"></li>
                                             </ul>
                                         </li>
                                         <li class="list-group-item todo-item" data-role="task">
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox" class="custom-control-input" id="customCheck3">
                                                 <label class="custom-control-label todo-label" for="customCheck3">
-                                                    <span class="todo-desc">Lorem Ipsum is simply dummy text of the printing </span> <span class="badge badge-pill badge-warning float-right">2 weeks</span>
+                                                    <span class="todo-desc">Lorem Ipsum is simply dummy text of the
+                                                        printing </span> <span
+                                                        class="badge badge-pill badge-warning float-right">2
+                                                        weeks</span>
                                                 </label>
                                             </div>
                                             <div class="item-date"> 26 jun 2017</div>
@@ -307,12 +364,18 @@ include "INCLUDES/navigation.php"
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox" class="custom-control-input" id="customCheck4">
                                                 <label class="custom-control-label todo-label" for="customCheck4">
-                                                    <span class="todo-desc">Give Purchase report to</span> <span class="badge badge-pill badge-info float-right">Yesterday</span>
+                                                    <span class="todo-desc">Give Purchase report to</span> <span
+                                                        class="badge badge-pill badge-info float-right">Yesterday</span>
                                                 </label>
                                             </div>
                                             <ul class="list-style-none assignedto">
-                                                <li class="assignee"><img class="rounded-circle" width="40" src="assets/images/users/3.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Priyanka"></li>
-                                                <li class="assignee"><img class="rounded-circle" width="40" src="assets/images/users/4.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Selina"></li>
+                                                <li class="assignee"><img class="rounded-circle" width="40"
+                                                        src="assets/images/users/3.jpg" alt="user" data-toggle="tooltip"
+                                                        data-placement="top" title="" data-original-title="Priyanka">
+                                                </li>
+                                                <li class="assignee"><img class="rounded-circle" width="40"
+                                                        src="assets/images/users/4.jpg" alt="user" data-toggle="tooltip"
+                                                        data-placement="top" title="" data-original-title="Selina"></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -321,7 +384,7 @@ include "INCLUDES/navigation.php"
                         </div>
                     </div>
                     <div class="col-md-6">
-                         <!-- card -->
+                        <!-- card -->
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title m-b-0">Progress Box</h4>
@@ -333,7 +396,9 @@ include "INCLUDES/navigation.php"
                                         </div>
                                     </div>
                                     <div class="progress">
-                                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 81%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar progress-bar-striped" role="progressbar"
+                                            style="width: 81%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+                                        </div>
                                     </div>
                                 </div>
                                 <div>
@@ -344,7 +409,9 @@ include "INCLUDES/navigation.php"
                                         </div>
                                     </div>
                                     <div class="progress">
-                                        <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 72%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+                                            style="width: 72%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                        </div>
                                     </div>
                                 </div>
                                 <div>
@@ -355,7 +422,9 @@ include "INCLUDES/navigation.php"
                                         </div>
                                     </div>
                                     <div class="progress">
-                                        <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 53%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar progress-bar-striped bg-info" role="progressbar"
+                                            style="width: 53%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                                        </div>
                                     </div>
                                 </div>
                                 <div>
@@ -366,7 +435,9 @@ include "INCLUDES/navigation.php"
                                         </div>
                                     </div>
                                     <div class="progress">
-                                        <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 3%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar progress-bar-striped bg-danger" role="progressbar"
+                                            style="width: 3%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -380,7 +451,8 @@ include "INCLUDES/navigation.php"
                                 <li class="d-flex no-block card-body">
                                     <i class="fa fa-check-circle w-30px m-t-5"></i>
                                     <div>
-                                        <a href="#" class="m-b-0 font-medium p-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
+                                        <a href="#" class="m-b-0 font-medium p-0">Lorem ipsum dolor sit amet,
+                                            consectetur adipiscing elit.</a>
                                         <span class="text-muted">dolor sit amet, consectetur adipiscing</span>
                                     </div>
                                     <div class="ml-auto">
@@ -393,7 +465,8 @@ include "INCLUDES/navigation.php"
                                 <li class="d-flex no-block card-body border-top">
                                     <i class="fa fa-gift w-30px m-t-5"></i>
                                     <div>
-                                        <a href="#" class="m-b-0 font-medium p-0">Congratulation Maruti, Happy Birthday</a>
+                                        <a href="#" class="m-b-0 font-medium p-0">Congratulation Maruti, Happy
+                                            Birthday</a>
                                         <span class="text-muted">many many happy returns of the day</span>
                                     </div>
                                     <div class="ml-auto">
@@ -419,7 +492,8 @@ include "INCLUDES/navigation.php"
                                 <li class="d-flex no-block card-body border-top">
                                     <i class="fa fa-leaf w-30px m-t-5"></i>
                                     <div>
-                                        <a href="#" class="m-b-0 font-medium p-0">Envato approved Maruti Admin template</a>
+                                        <a href="#" class="m-b-0 font-medium p-0">Envato approved Maruti Admin
+                                            template</a>
                                         <span class="text-muted">i am very happy to approved by TF</span>
                                     </div>
                                     <div class="ml-auto">
@@ -432,7 +506,8 @@ include "INCLUDES/navigation.php"
                                 <li class="d-flex no-block card-body border-top">
                                     <i class="fa fa-question-circle w-30px m-t-5"></i>
                                     <div>
-                                        <a href="#" class="m-b-0 font-medium p-0"> I am alwayse here if you have any question</a>
+                                        <a href="#" class="m-b-0 font-medium p-0"> I am alwayse here if you have any
+                                            question</a>
                                         <span class="text-muted">we glad that you choose our template</span>
                                     </div>
                                     <div class="ml-auto">
@@ -460,19 +535,31 @@ include "INCLUDES/navigation.php"
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div id="calendar-events" class="">
-                                                        <div class="calendar-events m-b-20" data-class="bg-info"><i class="fa fa-circle text-info m-r-10"></i>Event One</div>
-                                                        <div class="calendar-events m-b-20" data-class="bg-success"><i class="fa fa-circle text-success m-r-10"></i> Event Two</div>
-                                                        <div class="calendar-events m-b-20" data-class="bg-danger"><i class="fa fa-circle text-danger m-r-10"></i>Event Three</div>
-                                                        <div class="calendar-events m-b-20" data-class="bg-warning"><i class="fa fa-circle text-warning m-r-10"></i>Event Four</div>
+                                                        <div class="calendar-events m-b-20" data-class="bg-info"><i
+                                                                class="fa fa-circle text-info m-r-10"></i>Event One
+                                                        </div>
+                                                        <div class="calendar-events m-b-20" data-class="bg-success"><i
+                                                                class="fa fa-circle text-success m-r-10"></i> Event Two
+                                                        </div>
+                                                        <div class="calendar-events m-b-20" data-class="bg-danger"><i
+                                                                class="fa fa-circle text-danger m-r-10"></i>Event Three
+                                                        </div>
+                                                        <div class="calendar-events m-b-20" data-class="bg-warning"><i
+                                                                class="fa fa-circle text-warning m-r-10"></i>Event Four
+                                                        </div>
                                                     </div>
                                                     <!-- checkbox -->
                                                     <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="drop-remove">
-                                                        <label class="custom-control-label" for="drop-remove">Remove after drop</label>
+                                                        <input type="checkbox" class="custom-control-input"
+                                                            id="drop-remove">
+                                                        <label class="custom-control-label" for="drop-remove">Remove
+                                                            after drop</label>
                                                     </div>
-                                                    <a href="javascript:void(0)" data-toggle="modal" data-target="#add-new-event" class="btn m-t-20 btn-info btn-block waves-effect waves-light">
-                                                            <i class="ti-plus"></i> Request Meeting room
-                                                        </a>
+                                                    <a href="javascript:void(0)" data-toggle="modal"
+                                                        data-target="#add-new-event"
+                                                        class="btn m-t-20 btn-info btn-block waves-effect waves-light">
+                                                        <i class="ti-plus"></i> Request Meeting room
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -493,13 +580,17 @@ include "INCLUDES/navigation.php"
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h4 class="modal-title"><strong>Add Event</strong></h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <button type="button" class="close" data-dismiss="modal"
+                                    aria-hidden="true">&times;</button>
                             </div>
                             <div class="modal-body"></div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-success save-event waves-effect waves-light">Create event</button>
-                                <button type="button" class="btn btn-danger delete-event waves-effect waves-light" data-dismiss="modal">Delete</button>
+                                <button type="button" class="btn btn-secondary waves-effect"
+                                    data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-success save-event waves-effect waves-light">Create
+                                    event</button>
+                                <button type="button" class="btn btn-danger delete-event waves-effect waves-light"
+                                    data-dismiss="modal">Delete</button>
                             </div>
                         </div>
                     </div>
@@ -510,18 +601,21 @@ include "INCLUDES/navigation.php"
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h4 class="modal-title"><strong>Add</strong> a category</h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <button type="button" class="close" data-dismiss="modal"
+                                    aria-hidden="true">&times;</button>
                             </div>
                             <div class="modal-body">
                                 <form>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <label class="control-label">Category Name</label>
-                                            <input class="form-control form-white" placeholder="Enter name" type="text" name="category-name" />
+                                            <input class="form-control form-white" placeholder="Enter name" type="text"
+                                                name="category-name" />
                                         </div>
                                         <div class="col-md-6">
                                             <label class="control-label">Choose Category Color</label>
-                                            <select class="form-control form-white" data-placeholder="Choose a color..." name="category-color">
+                                            <select class="form-control form-white" data-placeholder="Choose a color..."
+                                                name="category-color">
                                                 <option value="success">Success</option>
                                                 <option value="danger">Danger</option>
                                                 <option value="info">Info</option>
@@ -534,8 +628,10 @@ include "INCLUDES/navigation.php"
                                 </form>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-danger waves-effect waves-light save-category" data-dismiss="modal">Save</button>
-                                <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-danger waves-effect waves-light save-category"
+                                    data-dismiss="modal">Save</button>
+                                <button type="button" class="btn btn-secondary waves-effect"
+                                    data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
@@ -560,7 +656,8 @@ include "INCLUDES/navigation.php"
             <!-- footer -->
             <!-- ============================================================== -->
             <footer class="footer text-center">
-                All Rights Reserved by Matrix-admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
+                All Rights Reserved by Matrix-admin. Designed and Developed by <a
+                    href="https://wrappixel.com">WrapPixel</a>.
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->

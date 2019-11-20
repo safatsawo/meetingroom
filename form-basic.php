@@ -107,19 +107,22 @@ include "INCLUDES/navigation.php"
 
 if (isset($_POST['submit'])) {
 
-    $NameOfDepartment = $_POST['NameOfDepartment'];
+    if ($_POST['NameOfDepartment'] == "" || $_POST['NameOfScheduler'] == "" || $_POST['PurposeOfMeeting'] == "") {
 
-    $NameOfDepartment = $_POST['NameOfDepartment'];
-    $NameOfScheduler = $_POST['NameOfScheduler'];
-    $PurposeOfMeeting = $_POST['PurposeOfMeeting'];
-    $gender = $_POST['gender'];
-    // $status = $_POST['statuss'];
+        echo '<div class="alert alert-danger alert-dismissable fade show" id="flash-msg">
+      <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+   <h4><i class="icon fa fa-check"></i>ALL FIELDS ARE NEEDED!</h4>
+    </div>';
+    } else {
+        $NameOfDepartment = $_POST['NameOfDepartment'];
+        $NameOfScheduler = $_POST['NameOfScheduler'];
+        $PurposeOfMeeting = $_POST['PurposeOfMeeting'];
+        $gender = $_POST['gender'];
+    }
 
-    $query = "INSERT INTO Request(NameOfDepartment, NameOfScheduler, PurposeOfMeeting, gender)";
-    $query .= " VALUES ('{$NameOfDepartment}', '{$NameOfScheduler}', '{$PurposeOfMeeting}', '{$gender}')";
+    $query = "INSERT INTO Request(NameOfDepartment, NameOfScheduler, PurposeOfMeeting, gender)VALUES ('{$NameOfDepartment}', '{$NameOfScheduler}', '{$PurposeOfMeeting}', '{$gender}') ";
     mysqli_query($connection, $query);
-
-
+    Test($query);
 }
 ?>
             <div class="row">
@@ -155,12 +158,22 @@ if (isset($_POST['submit'])) {
                                 <div class="form-group row">
                                     <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Gender
                                     </label>
-                                    <select name="Gender" id="">
-                                        <option value="volvo">Male</option>
-                                        <option value="saab">Female</option>
-                                        <option value="opel">Other</option>
-
-                                    </select>
+                                    <!-- <select name="gender" id="">
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Other">Other</option>
+                                    </select> -->
+                                    <select class="custom-select mr-sm-2" >
+        <option selected>Choose...</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+                                    <!-- <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="lname"
+                                            placeholder="Gender eg.male or female" name="gender">
+                                    </div> -->
                                 </div>
 
                             </div>
