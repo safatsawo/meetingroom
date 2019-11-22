@@ -107,7 +107,7 @@ include "INCLUDES/navigation.php"
 
 if (isset($_POST['submit'])) {
 
-    if ($_POST['NameOfDepartment'] == "" || $_POST['NameOfScheduler'] == "" || $_POST['PurposeOfMeeting'] == "") {
+    if ($_POST['NameOfDepartment'] == "" || $_POST['NameOfScheduler'] == "" || $_POST['PurposeOfMeeting'] == ""|| $_FILES['image']['name']== null) {
 
         echo '<div class="alert alert-danger alert-dismissable fade show" id="flash-msg">
       <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
@@ -130,11 +130,12 @@ if (isset($_POST['submit'])) {
                 echo 'Something went wrong uploading file' . mysqli_error($connection);
             }
         }
-    }
+    
 
     $query = "INSERT INTO Request(NameOfDepartment, NameOfScheduler, PurposeOfMeeting, gender, image )VALUES ('{$NameOfDepartment}', '{$NameOfScheduler}', '{$PurposeOfMeeting}', '{$gender}', '{$image}') ";
     mysqli_query($connection, $query);
     Test($query);
+    }
 }
 ?>
             <div class="row">
