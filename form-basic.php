@@ -118,9 +118,21 @@ if (isset($_POST['submit'])) {
         $NameOfScheduler = $_POST['NameOfScheduler'];
         $PurposeOfMeeting = $_POST['PurposeOfMeeting'];
         $gender = $_POST['gender'];
+        $image_temp = $_FILES['image']['tmp_name'];
+        $image = $_FILES['image']['name'];
+
+        move_uploaded_file($image_temp, "../meetingRoom/assets/images/users/$image"); //The move_uploaded_file() function moves an uploaded file to a new destination(WHICH IS uploadsin this case)
+        if (move_uploaded_file($_FILES["image"]["tmp_name"], "../meetingRoom/assets/images/users/$image")) { // checks the condition of moving the picture
+            $mysqli = connectDB();
+            if (upload($id, $path, $mysqli)) {
+                echo 'File uploaded';
+            } else {
+                echo 'Something went wrong uploading file' . mysqli_error($connection);
+            }
+        }
     }
 
-    $query = "INSERT INTO Request(NameOfDepartment, NameOfScheduler, PurposeOfMeeting, gender)VALUES ('{$NameOfDepartment}', '{$NameOfScheduler}', '{$PurposeOfMeeting}', '{$gender}') ";
+    $query = "INSERT INTO Request(NameOfDepartment, NameOfScheduler, PurposeOfMeeting, gender, image )VALUES ('{$NameOfDepartment}', '{$NameOfScheduler}', '{$PurposeOfMeeting}', '{$gender}', '{$image}') ";
     mysqli_query($connection, $query);
     Test($query);
 }
@@ -156,66 +168,69 @@ if (isset($_POST['submit'])) {
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Gender
-                                    </label>
-                                    <!-- <select name="gender" id="">
-                                        <option value="Male">Male</option>
-                                        <option value="Female">Female</option>
-                                        <option value="Other">Other</option>
-                                    </select> -->
-                                    <select class="custom-select mr-sm-2" >
-        <option selected>Choose...</option>
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-        <option value="Other">Other</option>
-      </select>
-    </div>
-                                    <!-- <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="lname"
-                                            placeholder="Gender eg.male or female" name="gender">
-                                    </div> -->
+                                    <label for="cono1" class="col-sm-3 text-right control-label col-form-label"
+                                        for="post_image">Image</label>
+                                    <input type="file" class="col-sm-9 form-control" name="image">
                                 </div>
+                            </div>
 
-                            </div>
-                            <div class="border-top">
-                                <div class="card-body">
-                                    <button type="submit" class="btn btn-primary" name="submit">submit</button>
-                                     <!-- <input type="submit" name="submit" value="submit"> -->
+                            <div class="form-group row">
+                                <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Gender
+                                </label>
+
+                                <div class="form-group row align-items-center">
+                                    <div class="col-auto my-1">
+                                        <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                                        <select name="gender" class="custom-select mr-sm-2">
+                                            <!-- <option selected>Choose...</option> -->
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+
                                 </div>
                             </div>
-                        </form>
                     </div>
+                    <div class="border-top">
+                        <div class="card-body">
+                            <button type="submit" class="btn btn-primary btn-lg btn-block" name="submit">SUBMIT</button>
+                            <!-- <input type="submit" name="submit" value="submit"> -->
+                        </div>
+                    </div>
+                    </form>
                 </div>
-
-
-
             </div>
-        </div>
-        <!-- editor -->
 
-        <!-- ============================================================== -->
-        <!-- End PAge Content -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Right sidebar -->
-        <!-- ============================================================== -->
-        <!-- .right-sidebar -->
-        <!-- ============================================================== -->
-        <!-- End Right sidebar -->
-        <!-- ============================================================== -->
+
+
+        </div>
     </div>
+    <!-- editor -->
+
     <!-- ============================================================== -->
-    <!-- End Container fluid  -->
+    <!-- End PAge Content -->
     <!-- ============================================================== -->
     <!-- ============================================================== -->
-    <!-- footer -->
+    <!-- Right sidebar -->
     <!-- ============================================================== -->
-    <footer class="footer text-center">
-        All Rights Reserved by Matrix-admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
-    </footer>
+    <!-- .right-sidebar -->
     <!-- ============================================================== -->
-    <!-- End footer -->
+    <!-- End Right sidebar -->
     <!-- ============================================================== -->
+</div>
+<!-- ============================================================== -->
+<!-- End Container fluid  -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- footer -->
+<!-- ============================================================== -->
+<footer class="footer text-center">
+    All Rights Reserved by Matrix-admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
+</footer>
+<!-- ============================================================== -->
+<!-- End footer -->
+<!-- ============================================================== -->
 </div>
 <!-- ============================================================== -->
 <!-- End Page wrapper  -->

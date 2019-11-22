@@ -166,43 +166,7 @@ include "INCLUDES/navigation.php"
                             </div>
                         </a>
                     </div>
-                    <!-- Column -->
-                    <!-- <div class="col-md-6 col-lg-2 col-xlg-3">
-                    <div class="card card-hover">
-                        <div class="box bg-info text-center">
-                            <h1 class="font-light text-white"><i class="mdi mdi-relative-scale"></i></h1>
-                            <h6 class="text-white">Buttons</h6>
-                        </div>
-                    </div>
-                </div> -->
-                    <!-- Column -->
-                    <!-- <div class="col-md-6 col-lg-2 col-xlg-3">
-                    <div class="card card-hover">
-                        <div class="box bg-cyan text-center">
-                            <h1 class="font-light text-white"><i class="mdi mdi-pencil"></i></h1>
-                            <h6 class="text-white">Elements</h6>
-                        </div>
-                    </div>
-                </div> -->
-                    <!-- Column -->
-                    <!-- <div class="col-md-6 col-lg-2 col-xlg-3">
-                    <div class="card card-hover">
-                        <div class="box bg-success text-center">
-                            <h1 class="font-light text-white"><i class="mdi mdi-calendar-check"></i></h1>
-                            <h6 class="text-white">Calnedar</h6>
-                        </div>
-                    </div>
-                </div> -->
-                    <!-- Column -->
-                    <!-- <div class="col-md-6 col-lg-2 col-xlg-3">
-                    <div class="card card-hover">
-                        <div class="box bg-warning text-center">
-                            <h1 class="font-light text-white"><i class="mdi mdi-alert"></i></h1>
-                            <h6 class="text-white">Errors</h6>
-                        </div>
-                    </div>
-                </div> -->
-                    <!-- Column -->
+
                 </div>
                 <div class="row">
                     <div class="col-md-6">
@@ -212,36 +176,16 @@ include "INCLUDES/navigation.php"
                             </div>
                             <div class="comment-widgets scrollable">
                                 <!-- Comment Row -->
-                                <div class="d-flex flex-row comment-row m-t-0">
+                                <div class="d-flex flex-row comme nnt-row m-t-0">
+
+
+
                                     <div class="p-2"><img src="assets/images/users/1.jpg" alt="user" width="50"
                                             class="rounded-circle"></div>
                                     <div class="comment-text w-100">
-                                        <?php
-$query = "SELECT * FROM posts WHERE id ";
-$select_all_query = mysqli_query($connection, $query);
-
-while ($row = mysqli_fetch_assoc($select_all_query)) {
-
-    echo "hello";
-    $name = $row['name'];
-    $image = $row['image'];
-    $post = $row['posts'];
-
-    ?>
                                         <h6 class="font-medium">James Anderson</h6>
                                         <span class="m-b-15 d-block">Lorem Ipsum is simply dummy text of the printing
                                             and type setting industry. </span>
-
-
-                                        <?php
-
-}?>
-
-                                        ?>
-
-
-
-
 
 
                                         <div class="comment-footer">
