@@ -49,7 +49,9 @@ edium"><?php echo $NameOfScheduler ?></h6>
 
 
 
-<label for=""></label>
+                <label for=""></label>
 
             </div>
         </div>
+    </div>
+</div>

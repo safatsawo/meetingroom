@@ -107,7 +107,7 @@ include "INCLUDES/navigation.php"
 
 if (isset($_POST['submit'])) {
 
-    if ($_POST['NameOfDepartment'] == "" || $_POST['NameOfScheduler'] == "" || $_POST['PurposeOfMeeting'] == "") {
+    if ($_POST['NameOfDepartment'] == "" || $_POST['NameOfScheduler'] == "" || $_POST['PurposeOfMeeting'] == ""||$_POST['duration'] ==""||$_POST['tdate']=="") {
 
         echo '<div class="alert alert-danger alert-dismissable fade show" id="flash-msg">
       <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
@@ -117,19 +117,24 @@ if (isset($_POST['submit'])) {
         $NameOfDepartment = $_POST['NameOfDepartment'];
         $NameOfScheduler = $_POST['NameOfScheduler'];
         $PurposeOfMeeting = $_POST['PurposeOfMeeting'];
-       
-    
+        $duration = $_POST['duration'];
+        // echo date('F d, Y h:mA', strtotime('2009-10-14 19:00:00'));
+        $date = $_POST['tdate'];
+        $date = date("Y-m-d", strtotime($date));
+//         $time = $_POST['time'];
+//         $time = time("h:m:s", strtotime($time));
+// $date = $date.$time;
 
-    $query = "INSERT INTO Request(NameOfDepartment, NameOfScheduler, PurposeOfMeeting )VALUES ('{$NameOfDepartment}', '{$NameOfScheduler}', '{$PurposeOfMeeting}') ";
-    mysqli_query($connection, $query);
-    Test($query);
+        $query = "INSERT INTO Request(NameOfDepartment, NameOfScheduler, PurposeOfMeeting,duration,tdate) VALUES ('{$NameOfDepartment}', '{$NameOfScheduler}', '{$PurposeOfMeeting}','{$duration}','{$date}')";
+        mysqli_query($connection, $query);
+        Test($query);
     }
 }
 ?>
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
-                        <form class="form-horizontal" action="form-basic.php" method="POST"
+                        <form class="form-horizontal" action="form-basic.php" name="submit" method="POST"
                             enctype="multipart/form-data">
                             <div class="card-body">
                                 <h4 class="card-title">Meeting Info</h4>
@@ -156,70 +161,65 @@ if (isset($_POST['submit'])) {
                                         <textarea type="text" name="PurposeOfMeeting" class="form-control"></textarea>
                                     </div>
                                 </div>
-                                <!-- <div class="form-group row">
-                                    <label for="cono1" class="col-sm-3 text-right control-label col-form-label"
-                                        for="post_image">Image</label>
-                                    <input type="file" class="col-sm-9 form-control" name="image">
+                                <div class="form-group row">
+                                    <label for="date"
+                                        class="col-sm-3 text-right control-label col-form-label">Date</label>
+                                    <input type="date" class="form-control col-3" name="tdate" id="date">
+
+                                </div>
+                                <div class="form-group row">
+                                    <label for="time"
+                                        class="col-sm-3 text-right control-label col-form-label">Time</label>
+                                    <input type="time" class="form-control col-3" name="time" id="time">
+
+                                </div>
+                                <div class="form-group row">
+                                    <label for="duration" class="col-sm-3 text-right control-label">Duration</label>
+                                    <input type="number" class="form-control col-3" name="duration" id="duration">
+
+                                </div>
+
+                            </div>
+                            <div class="border-top">
+                                <div class="card-body">
+                                    <button type="submit" class="btn btn-primary align-center"
+                                        name="submit">SUBMIT</button>
+                                    <!-- <input type="submit" name="submit" value="submit"> -->
                                 </div>
                             </div>
-
-                            <div class="form-group row">
-                                <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Gender
-                                </label>
-
-                                <div class="form-group row align-items-center">
-                                    <div class="col-auto my-1">
-                                        <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
-                                        <select name="gender" class="custom-select mr-sm-2">
-                                             <option selected>Choose...</option> 
-                                            <option value="Male">Male</option>
-                                            <option value="Female">Female</option>
-                                            <option value="Other">Other</option>
-                                        </select>
-                                    </div>
-
-                                </div>
-                            </div> -->
+                        </form>
                     </div>
-                    <div class="border-top">
-                        <div class="card-body">
-                            <button type="submit" class="btn btn-primary align-center" name="submit">SUBMIT</button>
-                            <!-- <input type="submit" name="submit" value="submit"> -->
-                        </div>
-                    </div>
-                    </form>
                 </div>
+
+
+
             </div>
-
-
-
         </div>
-    </div>
-    <!-- editor -->
+        <!-- editor -->
 
+        <!-- ============================================================== -->
+        <!-- End PAge Content -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Right sidebar -->
+        <!-- ============================================================== -->
+        <!-- .right-sidebar -->
+        <!-- ============================================================== -->
+        <!-- End Right sidebar -->
+        <!-- ============================================================== -->
+    </div>
     <!-- ============================================================== -->
-    <!-- End PAge Content -->
+    <!-- End Container fluid  -->
     <!-- ============================================================== -->
     <!-- ============================================================== -->
-    <!-- Right sidebar -->
+    <!-- footer -->
     <!-- ============================================================== -->
-    <!-- .right-sidebar -->
+    <footer class="footer text-center">
+        All Rights Reserved by Matrix-admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
+    </footer>
     <!-- ============================================================== -->
-    <!-- End Right sidebar -->
+    <!-- End footer -->
     <!-- ============================================================== -->
-</div>
-<!-- ============================================================== -->
-<!-- End Container fluid  -->
-<!-- ============================================================== -->
-<!-- ============================================================== -->
-<!-- footer -->
-<!-- ============================================================== -->
-<footer class="footer text-center">
-    All Rights Reserved by Matrix-admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
-</footer>
-<!-- ============================================================== -->
-<!-- End footer -->
-<!-- ============================================================== -->
 </div>
 <!-- ============================================================== -->
 <!-- End Page wrapper  -->
