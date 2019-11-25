@@ -107,7 +107,7 @@ include "INCLUDES/navigation.php"
 
 if (isset($_POST['submit'])) {
 
-    if ($_POST['NameOfDepartment'] == "" || $_POST['NameOfScheduler'] == "" || $_POST['PurposeOfMeeting'] == ""|| $_FILES['image']['name']== null) {
+    if ($_POST['NameOfDepartment'] == "" || $_POST['NameOfScheduler'] == "" || $_POST['PurposeOfMeeting'] == "") {
 
         echo '<div class="alert alert-danger alert-dismissable fade show" id="flash-msg">
       <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
@@ -117,22 +117,10 @@ if (isset($_POST['submit'])) {
         $NameOfDepartment = $_POST['NameOfDepartment'];
         $NameOfScheduler = $_POST['NameOfScheduler'];
         $PurposeOfMeeting = $_POST['PurposeOfMeeting'];
-        $gender = $_POST['gender'];
-        $image_temp = $_FILES['image']['tmp_name'];
-        $image = $_FILES['image']['name'];
-
-        move_uploaded_file($image_temp, "../meetingRoom/assets/images/users/$image"); //The move_uploaded_file() function moves an uploaded file to a new destination(WHICH IS uploadsin this case)
-        if (move_uploaded_file($_FILES["image"]["tmp_name"], "../meetingRoom/assets/images/users/$image")) { // checks the condition of moving the picture
-            $mysqli = connectDB();
-            if (upload($id, $path, $mysqli)) {
-                echo 'File uploaded';
-            } else {
-                echo 'Something went wrong uploading file' . mysqli_error($connection);
-            }
-        }
+       
     
 
-    $query = "INSERT INTO Request(NameOfDepartment, NameOfScheduler, PurposeOfMeeting, gender, image )VALUES ('{$NameOfDepartment}', '{$NameOfScheduler}', '{$PurposeOfMeeting}', '{$gender}', '{$image}') ";
+    $query = "INSERT INTO Request(NameOfDepartment, NameOfScheduler, PurposeOfMeeting )VALUES ('{$NameOfDepartment}', '{$NameOfScheduler}', '{$PurposeOfMeeting}') ";
     mysqli_query($connection, $query);
     Test($query);
     }
@@ -168,7 +156,7 @@ if (isset($_POST['submit'])) {
                                         <textarea type="text" name="PurposeOfMeeting" class="form-control"></textarea>
                                     </div>
                                 </div>
-                                <div class="form-group row">
+                                <!-- <div class="form-group row">
                                     <label for="cono1" class="col-sm-3 text-right control-label col-form-label"
                                         for="post_image">Image</label>
                                     <input type="file" class="col-sm-9 form-control" name="image">
@@ -183,7 +171,7 @@ if (isset($_POST['submit'])) {
                                     <div class="col-auto my-1">
                                         <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
                                         <select name="gender" class="custom-select mr-sm-2">
-                                            <!-- <option selected>Choose...</option> -->
+                                             <option selected>Choose...</option> 
                                             <option value="Male">Male</option>
                                             <option value="Female">Female</option>
                                             <option value="Other">Other</option>
@@ -191,11 +179,11 @@ if (isset($_POST['submit'])) {
                                     </div>
 
                                 </div>
-                            </div>
+                            </div> -->
                     </div>
                     <div class="border-top">
                         <div class="card-body">
-                            <button type="submit" class="btn btn-primary btn-lg btn-block" name="submit">SUBMIT</button>
+                            <button type="submit" class="btn btn-primary align-center" name="submit">SUBMIT</button>
                             <!-- <input type="submit" name="submit" value="submit"> -->
                         </div>
                     </div>

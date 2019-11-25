@@ -1,4 +1,3 @@
-
 <div class="row">
     <!-- column -->
     <div class="col-lg-12">
@@ -11,8 +10,8 @@
 
 
 
-                    <!-- //fetching data from database -->
-                    <?php
+                <!-- //fetching data from database -->
+                <?php
 if (isset($_GET['id'])) { // this is the ecledit button that will be clicked
     $the_id = $_GET['id']; // the ID will be recieved here and transferred to variable
 }
@@ -22,7 +21,6 @@ $select_request_query = mysqli_query($connection, $query);
 
 while ($row = mysqli_fetch_assoc($select_request_query)) {
     $id = $row['id'];
-    $gender = $row['gender'];
     $NameOfDepartment = $row['NameOfDepartment'];
     $NameOfScheduler = $row['NameOfScheduler'];
     $PurposeOfMeeting = $row['PurposeOfMeeting'];
@@ -32,12 +30,10 @@ while ($row = mysqli_fetch_assoc($select_request_query)) {
     $updated_at = $row['updated_at']
 
     ?>
-       <div class="d-flex flex-row comment-row ">
-                    <div class="p-2"><img src="assets/images/users/<?php echo $image; ?>" alt="user" width="50"
-                            class="rounded-circle">
-                    </div>
+                <div class="d-flex flex-row comment-row ">
                     <div class="comment-text w-100">
-                        <h6 class="font-medium"><?php echo $NameOfScheduler ?></h6>
+                        <h6 class="font-m
+edium"><?php echo $NameOfScheduler ?></h6>
                         <span class="m-b-15 d-block"><?php echo $PurposeOfMeeting ?></span>
                         <div class="comment-footer">
                             <span class="text-muted float-right"><?php echo $updated_at ?></span>
@@ -53,7 +49,7 @@ while ($row = mysqli_fetch_assoc($select_request_query)) {
 
 
 
-
+<label for=""></label>
 
             </div>
         </div>

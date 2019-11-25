@@ -94,8 +94,6 @@ include "INCLUDES/navigation.php"
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Gender</th>
-
                                     <th scope="col">Requester</th>
                                     <th scope="col">Departments</th>
 
@@ -118,7 +116,6 @@ $select_meeting_query = mysqli_query($connection, $query);
 
 while ($row = mysqli_fetch_assoc($select_meeting_query)) {
     $id = $row['id'];
-    $gender = $row['gender'];
     $NameOfDepartment = $row['NameOfDepartment'];
     $NameOfScheduler = $row['NameOfScheduler'];
     $PurposeOfMeeting = $row['PurposeOfMeeting'];
@@ -128,7 +125,6 @@ while ($row = mysqli_fetch_assoc($select_meeting_query)) {
 
                                 <tr>
                                     <th scope="row"><?php echo $id ?></th>
-                                    <th><?php echo $gender ?></th>
                                     <td><?php echo $NameOfScheduler ?></td>
                                     <td><?php echo $NameOfDepartment ?></td>
 
