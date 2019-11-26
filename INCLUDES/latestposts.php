@@ -31,7 +31,7 @@ $duration = $row['duration'];
     ?>
                 <div class="d-flex flex-row comment-row ">
                     <div class="comment-text w-100">
-                        <h6 class="font-weight-bold"><?php echo $NameOfScheduler ?></h6>
+                        <h6 class="font-weight-bold"><?php echo $NameOfScheduler ?></h6>//display the result from the database
                         <span class="m-b-15 d-block font-weight-normal"><?php echo $PurposeOfMeeting ?></span>
                         <div class="comment-footer">
                         <span class="text-muted float-right"><?php echo $updated_at ?></span>
