@@ -100,6 +100,7 @@ include "INCLUDES/navigation.php"
                                     <th scope="col">Purpose</th>
                                     <th scope="col">Duration</th>
 
+                                    <th scope="col">Date</th>
 
                                     <th scope="col">Status</th>
 
@@ -123,8 +124,8 @@ while ($row = mysqli_fetch_assoc($select_meeting_query)) {
     $NameOfScheduler = $row['NameOfScheduler'];
     $PurposeOfMeeting = $row['PurposeOfMeeting'];
     $duration = $row['duration'];
-    $date = $row['date'];
-    $time = $row['time'];
+    $date = $row['tdate'];
+    // $time = $row['time'];
 
     $Status = $row['is_accepted'];
 
@@ -137,6 +138,8 @@ while ($row = mysqli_fetch_assoc($select_meeting_query)) {
 
                                     <td><?php echo $PurposeOfMeeting ?></td>
                                     <td><?php echo $duration ?> mins</td>
+                                    <td><?php echo $date ?></td>
+
 
                                     <td><?php echo $Status == 1 ? "Approved" : "Not Approved" ?></td>
 

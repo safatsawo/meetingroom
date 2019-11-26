@@ -79,35 +79,10 @@ include "INCLUDES/navigation.php"
             <!-- ============================================================== -->
 
             <?php
-// if (isset($_POST['submit'])) {
-// echo "<h1>HELLO WORLD</h1>";
-
-// if ($_POST['NameOfDepartment'] == "" || $_POST['NameOfScheduler'] == "" || $_POST['PurposeOfMeeting'] == "") {
-//     echo '<div class="alert alert-danger alert-dismissable fade show" id="flash-msg">
-//       <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-//    <h4><i class="icon fa fa-check"></i>ALL FIELDS ARE NEEDED!</h4>
-//     </div>';
-// }
-// else {
-// $id = $_POST['id'];
-// $NameOfDepartment = $_POST['NameOfDepartment'];
-// $NameOfScheduler = $_POST['NameOfScheduler'];
-// $PurposeOfMeeting = $_POST['PurposeOfMeeting'];
-// $Gender = $_POST['Gender'];
-
-// $query = "INSERT INTO Request(NameOfDepartment, NameOfScheduler, Gender)";
-// $query .= "VALUES ('{$NameOfDepartment}' ,'{$NameOfScheduler}' ,'{$PurposeOfMeeting}', '{$Gender}')";
-
-//         $create_post_query = mysqli_query($connection, $query);
-//         if ($create_post_query) {
-//             die("QUERY FAILED" . mysqli_error($connection));
-//   }
-
-// }
 
 if (isset($_POST['submit'])) {
 
-    if ($_POST['NameOfDepartment'] == "" || $_POST['NameOfScheduler'] == "" || $_POST['PurposeOfMeeting'] == ""||$_POST['duration'] ==""||$_POST['tdate']=="") {
+    if ($_POST['NameOfDepartment'] == "" || $_POST['NameOfScheduler'] == "" || $_POST['PurposeOfMeeting'] == "" || $_POST['duration'] == "" || $_POST['tdate'] == "") {
 
         echo '<div class="alert alert-danger alert-dismissable fade show" id="flash-msg">
       <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
@@ -121,9 +96,9 @@ if (isset($_POST['submit'])) {
         // echo date('F d, Y h:mA', strtotime('2009-10-14 19:00:00'));
         $date = $_POST['tdate'];
         $date = date("Y-m-d", strtotime($date));
-//         $time = $_POST['time'];
-//         $time = time("h:m:s", strtotime($time));
-// $date = $date.$time;
+        // $time = $_POST['time'];
+        //         $time = time("h:m:s", strtotime($time));
+        // $date = $date.$time;
 
         $query = "INSERT INTO Request(NameOfDepartment, NameOfScheduler, PurposeOfMeeting,duration,tdate) VALUES ('{$NameOfDepartment}', '{$NameOfScheduler}', '{$PurposeOfMeeting}','{$duration}','{$date}')";
         mysqli_query($connection, $query);

@@ -1,29 +1,12 @@
-<!DOCTYPE html>
-<html dir="ltr" lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
-    <title>Matrix Template - The Ultimate Multipurpose admin template</title>
-    <!-- Custom CSS -->
-    <link href="assets/libs/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet" />
-    <link href="assets/extra-libs/calendar/calendar.css" rel="stylesheet" />
-    <link href="dist/css/style.min.css" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-</head>
-
-<body>
+<?php 
+include "INCLUDES/pagesheader.php"
+?>
+<?php 
+include "INCLUDES/db.php"
+?>
+<?php 
+ob_start(); 
+?>
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
@@ -41,7 +24,7 @@
         <!-- Topbar header - style you can find in pages.scss -->
         <!-- ============================================================== -->
         <header class="topbar" data-navbarbg="skin5">
-        <?php
+            <?php
 include "INCLUDES/Navigation.php";
 ?>
         </header>
@@ -110,19 +93,31 @@ include "INCLUDES/navigation.php"
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div id="calendar-events" class="">
-                                                        <div class="calendar-events m-b-20" data-class="bg-info"><i class="fa fa-circle text-info m-r-10"></i>Event One</div>
-                                                        <div class="calendar-events m-b-20" data-class="bg-success"><i class="fa fa-circle text-success m-r-10"></i> Event Two</div>
-                                                        <div class="calendar-events m-b-20" data-class="bg-danger"><i class="fa fa-circle text-danger m-r-10"></i>Event Three</div>
-                                                        <div class="calendar-events m-b-20" data-class="bg-warning"><i class="fa fa-circle text-warning m-r-10"></i>Event Four</div>
+                                                        <div class="calendar-events m-b-20" data-class="bg-info"><i
+                                                                class="fa fa-circle text-info m-r-10"></i>Event One
+                                                        </div>
+                                                        <div class="calendar-events m-b-20" data-class="bg-success"><i
+                                                                class="fa fa-circle text-success m-r-10"></i> Event Two
+                                                        </div>
+                                                        <div class="calendar-events m-b-20" data-class="bg-danger"><i
+                                                                class="fa fa-circle text-danger m-r-10"></i>Event Three
+                                                        </div>
+                                                        <div class="calendar-events m-b-20" data-class="bg-warning"><i
+                                                                class="fa fa-circle text-warning m-r-10"></i>Event Four
+                                                        </div>
                                                     </div>
                                                     <!-- checkbox -->
                                                     <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="drop-remove">
-                                                        <label class="custom-control-label" for="drop-remove">Remove after drop</label>
+                                                        <input type="checkbox" class="custom-control-input"
+                                                            id="drop-remove">
+                                                        <label class="custom-control-label" for="drop-remove">Remove
+                                                            after drop</label>
                                                     </div>
-                                                    <a href="javascript:void(0)" data-toggle="modal" data-target="#add-new-event" class="btn m-t-20 btn-info btn-block waves-effect waves-light">
-                                                            <i class="ti-plus"></i> Add New Event
-                                                        </a>
+                                                    <a href="javascript:void(0)" data-toggle="modal"
+                                                        data-target="#add-new-event"
+                                                        class="btn m-t-20 btn-info btn-block waves-effect waves-light">
+                                                        <i class="ti-plus"></i> Add New Event
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -143,13 +138,17 @@ include "INCLUDES/navigation.php"
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h4 class="modal-title"><strong>Add Event</strong></h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <button type="button" class="close" data-dismiss="modal"
+                                    aria-hidden="true">&times;</button>
                             </div>
                             <div class="modal-body"></div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-success save-event waves-effect waves-light">Create event</button>
-                                <button type="button" class="btn btn-danger delete-event waves-effect waves-light" data-dismiss="modal">Delete</button>
+                                <button type="button" class="btn btn-secondary waves-effect"
+                                    data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-success save-event waves-effect waves-light">Create
+                                    event</button>
+                                <button type="button" class="btn btn-danger delete-event waves-effect waves-light"
+                                    data-dismiss="modal">Delete</button>
                             </div>
                         </div>
                     </div>
@@ -160,33 +159,120 @@ include "INCLUDES/navigation.php"
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h4 class="modal-title"><strong>Add</strong> a category</h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <button type="button" class="close" data-dismiss="modal"
+                                    aria-hidden="true">&times;</button>
                             </div>
-                            <div class="modal-body">
-                                <form>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label class="control-label">Category Name</label>
-                                            <input class="form-control form-white" placeholder="Enter name" type="text" name="category-name" />
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label class="control-label">Choose Category Color</label>
-                                            <select class="form-control form-white" data-placeholder="Choose a color..." name="category-color">
-                                                <option value="success">Success</option>
-                                                <option value="danger">Danger</option>
-                                                <option value="info">Info</option>
-                                                <option value="primary">Primary</option>
-                                                <option value="warning">Warning</option>
-                                                <option value="inverse">Inverse</option>
-                                            </select>
+                            <div class="container-fluid">
+                                <!-- ============================================================== -->
+                                <!-- Start Page Content -->
+                                <!-- ============================================================== -->
+
+                                <?php
+
+if (isset($_POST['submit'])) {
+
+    if ($_POST['NameOfDepartment'] == "" || $_POST['NameOfScheduler'] == "" || $_POST['PurposeOfMeeting'] == "" || $_POST['duration'] == "" || $_POST['tdate'] == "") {
+        echo '<div class="alert alert-danger alert-dismissable fade show" id="flash-msg">
+      <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+   <h4><i class="icon fa fa-check"></i>ALL FIELDS ARE NEEDED!</h4>
+    </div>';    
+    } else {
+        header("Location: pages-calendar.php");
+        $NameOfDepartment = $_POST['NameOfDepartment'];
+        $NameOfScheduler = $_POST['NameOfScheduler'];
+        $PurposeOfMeeting = $_POST['PurposeOfMeeting'];
+        $duration = $_POST['duration'];
+        // echo date('F d, Y h:mA', strtotime('2009-10-14 19:00:00'));
+        $date = $_POST['tdate'];
+        $date = date("Y-m-d", strtotime($date));
+        // $time = $_POST['time'];
+        //         $time = time("h:m:s", strtotime($time));
+        // $date = $date.$time;
+
+        $query = "INSERT INTO Request(NameOfDepartment, NameOfScheduler, PurposeOfMeeting,duration,tdate) VALUES ('{$NameOfDepartment}', '{$NameOfScheduler}', '{$PurposeOfMeeting}','{$duration}','{$date}')";
+        mysqli_query($connection, $query);
+        Test($query);
+    }
+}
+?>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="card">
+                                            <form class="form-horizontal" action="pages-calendar.php" name="submit"
+                                                method="POST" enctype="multipart/form-data">
+                                                <div class="card-body">
+                                                    <h4 class="card-title">Meeting Info</h4>
+                                                    <div class="form-group row">
+                                                        <label for="fname"
+                                                            class="col-sm-3 text-right control-label col-form-label">Name
+                                                            Of
+                                                            Departments</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" name="NameOfDepartment"
+                                                                class="form-control" id="fname"
+                                                                placeholder="Name of Department Here">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="lname"
+                                                            class="col-sm-3 text-right control-label col-form-label">Name
+                                                            Of
+                                                            Scheduler</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" id="lname"
+                                                                placeholder="Name Of Scheduler" name="NameOfScheduler">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="cono1"
+                                                            class="col-sm-3 text-right control-label col-form-label">Purpose
+                                                            of Meeting</label>
+                                                        <div class="col-sm-9">
+                                                            <textarea type="text" name="PurposeOfMeeting"
+                                                                class="form-control"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="date"
+                                                            class="col-sm-3 text-right control-label col-form-label">Date</label>
+                                                        <input type="date" class="form-control col-3" name="tdate"
+                                                            id="date">
+
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="time"
+                                                            class="col-sm-3 text-right control-label col-form-label">Time</label>
+                                                        <input type="time" class="form-control col-3" name="time"
+                                                            id="time">
+
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="duration"
+                                                            class="col-sm-3 text-right control-label">Duration</label>
+                                                        <input type="number" class="form-control col-3" name="duration"
+                                                            id="duration">
+
+                                                    </div>
+
+                                                </div>
+                                                <div class="border-top">
+                                                    <div class="card-body">
+                                                        <button type="submit" class="btn btn-primary align-center"
+                                                            name="submit">SUBMIT</button>
+                                                        <button type="button" class="btn btn-secondary waves-effect"
+                                                            data-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
-                                </form>
+
+
+
+                                </div>
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-danger waves-effect waves-light save-category" data-dismiss="modal">Save</button>
-                                <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
-                            </div>
+
+
                         </div>
                     </div>
                 </div>
@@ -202,7 +288,8 @@ include "INCLUDES/navigation.php"
             <!-- footer -->
             <!-- ============================================================== -->
             <footer class="footer text-center">
-                All Rights Reserved by Matrix-admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
+                All Rights Reserved by Matrix-admin. Designed and Developed by <a
+                    href="https://wrappixel.com">WrapPixel</a>.
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
@@ -233,7 +320,7 @@ include "INCLUDES/navigation.php"
     <script src="dist/js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="dist/js/custom.min.js"></script>
-     <!-- this page js -->
+    <!-- this page js -->
     <script src="assets/libs/moment/min/moment.min.js"></script>
     <script src="assets/libs/fullcalendar/dist/fullcalendar.min.js"></script>
     <script src="dist/js/pages/calendar/cal-init.js"></script>
