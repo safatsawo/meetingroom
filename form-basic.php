@@ -255,7 +255,7 @@ if (isset($_POST['submit'])) {
                 if (!value) return;
                 if (opacity) value += ', ' + opacity;
                 if (typeof console === 'object') {
-                    console.log(value);
+                    console.log(value);mail@example.com
                 }
             },
             theme: 'bootstrap'

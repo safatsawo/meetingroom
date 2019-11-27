@@ -7,3 +7,4 @@ $connection = mysqli_connect('localhost', 'root', 'Appleboss1!', 'Meeting_Room')
 // echo "we are connected";
 
 // }
+?>

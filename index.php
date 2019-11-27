@@ -87,7 +87,7 @@ include "INCLUDES/navigation.php"
                 <!-- Column -->
                   <div class="col-md-6 col-lg-4 col-xlg-3">
                     <a href="./index.php">
-                        <div class="card card-hover">
+                        <div class="card card-hover shadow">
                             <div class="box bg-cyan text-center">
                                 <h1 class="font-light text-white"><i class="mdi mdi-view-dashboard"></i></h1>
                                 <h6 class="text-white">Dashboard</h6>
@@ -99,7 +99,7 @@ include "INCLUDES/navigation.php"
 
                   <div class="col-md-6 col-lg-4 col-xlg-3">
                     <a href="./form-basic.php">
-                        <div class="card card-hover">
+                        <div class="card card-hover shadow">
                             <div class="box bg-primary text-center">
                                 <h1 class="font-light text-white"><i class="mdi mdi-receipt"></i></h1>
                                 <h6 class="text-white">Forms</h6>
@@ -109,7 +109,7 @@ include "INCLUDES/navigation.php"
                 </div>
                 <div class="col-md-6 col-lg-4 col-xlg-3">
                     <a href="/pending-request.php">
-                        <div class="card card-hover">
+                        <div class="card card-hover shadow">
                             <div class="box bg-danger text-center">
                                 <h1 class="font-light text-white"><i class="mdi mdi-border-outside"></i></h1>
                                 <h6 class="text-white">Tables</h6>

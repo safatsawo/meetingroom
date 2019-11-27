@@ -1,4 +1,5 @@
-
+<?php ob_start(); ?>
+<?php session_start(); ?>
 <?php
 include "INCLUDES/db.php"
 ?>
@@ -61,14 +62,17 @@ include "INCLUDES/navigation.php"
             <div class="row">
                 <div class="col-12 d-flex no-block align-items-center">
                     <h4 class="page-title">Dashboard</h4>
-                    <!-- <div class="ml-auto text-right">
+                    <div class="ml-auto text-right">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Library</li>
+                                <!-- <li class="breadcrumb-item"><a href="/login2.php">login</a></li> -->
+                                <!-- <li class="breadcrumb-item active" aria-current="page">Library</li> -->
+                                <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#exampleModalCenter">
+                                    ADMIN LOGIN </button>
                             </ol>
                         </nav>
-                    </div> -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -85,19 +89,19 @@ include "INCLUDES/navigation.php"
             <div class="row">
                 <!-- Column -->
                 <!-- Column -->
-                  <div class="col-md-6 col-lg-4 col-xlg-3">
+                <div class="col-md-6 col-lg-4 col-xlg-3">
                     <a href="./index.php">
                         <div class="card card-hover">
-                            <div class="box bg-cyan text-center">
+                            <div class="box bg-secondary text-center">
                                 <h1 class="font-light text-white"><i class="mdi mdi-view-dashboard"></i></h1>
                                 <h6 class="text-white">Dashboard</h6>
                             </div>
                         </div>
                     </a>
                 </div>
-                  <!-- Column -->
+                <!-- Column -->
 
-                  <div class="col-md-6 col-lg-4 col-xlg-3">
+                <div class="col-md-6 col-lg-4 col-xlg-3">
                     <a href="./form-basic.php">
                         <div class="card card-hover">
                             <div class="box bg-primary text-center">
@@ -117,7 +121,7 @@ include "INCLUDES/navigation.php"
                         </div>
                     </a>
                 </div>
-                
+
             </div>
             <!-- ============================================================== -->
             <!-- Sales chart -->
@@ -149,45 +153,45 @@ include "INCLUDES/newupdates.php"
             <!-- column -->
 
             <!-- <div class="col-lg-6"> -->
-                <!-- Card -->
-                <?php
+            <!-- Card -->
+            <?php
 // include "INCLUDES/chatsoption.php"
 ?>
-                <!-- card -->
-                <?php
+            <!-- card -->
+            <?php
 // include "INCLUDES/ourpartners.php"
 ?>
-                <!-- accoridan part -->
-                <?php
+            <!-- accoridan part -->
+            <?php
 // include "INCLUDES/accordion.php"
 ?>
-                <!-- toggle part -->
-                <?php
+            <!-- toggle part -->
+            <?php
 // include "INCLUDES/toggle.php"
 ?>
-                <!-- Tabs -->
-                <?php
+            <!-- Tabs -->
+            <?php
 // include "INCLUDES/tabs.php"
 ?>
 
-            </div>
         </div>
-        <!-- ============================================================== -->
-        <!-- Recent comment and chats -->
-        <!-- ============================================================== -->
     </div>
     <!-- ============================================================== -->
-    <!-- End Container fluid  -->
+    <!-- Recent comment and chats -->
     <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- footer -->
-    <!-- ============================================================== -->
-    <?php
+</div>
+<!-- ============================================================== -->
+<!-- End Container fluid  -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- footer -->
+<!-- ============================================================== -->
+<?php
 include "INCLUDES/footer.php"
 ?>
-    <!-- ============================================================== -->
-    <!-- End footer -->
-    <!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- End footer -->
+<!-- ============================================================== -->
 </div>
 <!-- ============================================================== -->
 <!-- End Page wrapper  -->
@@ -199,6 +203,85 @@ include "INCLUDES/footer.php"
 <!-- ============================================================== -->
 <!-- All Jquery -->
 <!-- ============================================================== -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Admin Login</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <?php
+            // if(isset($_GET['id'])){
+            // $the_id = $_GET['id'];
+            // }
+            // $query = "SELECT * FROM admini ";
+            // $select_admin = mysqli_query($connection, $query);
+
+            // while($row=mysqli_fetch_assoc($select_admin)){
+            // $id = $row['id'];
+            // $first_name = $row['first_name'];
+            // $last_name = $row['last_name'];
+            // $email = $row['email'];
+            // $password = $row['password'];
+            // }
+            if(isset($_POST['submit'])){
+                if($_POST['email']=="" || $_POST['password']==""){
+                    echo '<div class="alert alert-danger alert-dismissable fade show" id="flash-msg">
+                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                 <h4><i class="icon fa fa-check"></i>FIELDS ARE EMPTY!</h4>
+                  </div>';
+                // }elseif(isset($_post['submit'])){
+                    // $the_id=$id;
+                }elseif($_POST['email']!="safatsawo@gmail.com" && $_POST['password']!="Appleboss1"){
+                    echo '<div class="alert alert-danger alert-dismissable fade show" id="flash-msg">
+                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                 <h4><i class="icon fa fa-check"></i>wrong details!</h4>
+                  </div>';
+
+                }elseif($_POST['email']=="safatsawo@gmail.com" && $_POST['password']=="Appleboss1"){
+
+                    $_SESSION["email"] = $row['email'];
+                    $_SESSION["password"] = $row['password'];
+                    } else {
+                    $message = "Invalid Username or Password!";
+                    }
+                    }
+                    if(isset($_SESSION["email"])) {
+                    header("Location:users.php");
+// $first_name =$_POST['first_name'];
+// $last_name = $_POST['last_name'];
+// echo $email = $_POST['email'];
+// $password = $_POST['password'];
+// header("Location: users.php" );
+// $query = INSERT INTO admini($first_name)
+                }
+?>
+                <form action="users.php" method="POST" name="submit" class="form-inline">
+                    <div class="form-group mb-2">
+                        <label for="Email" class="sr-only">Email</label>
+                        <input type="email" name="email" class="form-control" id="Email" placeholder="email">
+                    </div>
+                    <div class="form-group mx-sm-3 mb-2">
+                        <label for="inputPassword2" class="sr-only">Password</label>
+                        <input type="password"name="password" class="form-control" id="inputPassword2" placeholder="Password">
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" name="submit" class="btn btn-primary">Login</button>
+            </div>
+            </form>
+
+        </div>
+    </div>
+</div>
 <script src="assets/libs/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap tether Core JavaScript -->
 <script src="assets/libs/popper.js/dist/umd/popper.min.js"></script>
