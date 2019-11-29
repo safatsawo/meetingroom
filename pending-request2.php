@@ -104,7 +104,7 @@ include "INCLUDES/navigation.php"
 
                                     <th scope="col" class="text-uppercase font-weight-bold">Status</th>
 
-                                    <th scope="col" class="text-uppercase font-weight-bold">Action</th>
+                                    <!-- <th scope="col" class="text-uppercase font-weight-bold">Action</th> -->
 
                                 </tr>
                             </thead>
@@ -152,10 +152,10 @@ while ($row = mysqli_fetch_assoc($select_meeting_query)) {
 switch ($Status) {
 
         case '0':
-            echo "<td><button type='submit' name='submit' class='btn btn-success'>APPROVE</button></td> ";
+            // echo "<td><button type='submit' name='submit' class='btn btn-success' disabled>APPROVE</button></td> ";
             break;
         default:
-            echo "<td><button type='submit' name='submit' class='btn btn-danger'>UNAPPROVE</button></td>";
+            // echo "<td><button type='submit' name='submit' class='btn btn-danger'disabled>UNAPPROVE</button></td>";
 
     }
     ?>

@@ -1,8 +1,10 @@
+
 <div class="row">
     <!-- column -->
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
+          
                 <h4 class="card-title">Latest Posts</h4>
             </div>
             <div class="comment-widgets scrollable">
@@ -50,7 +52,7 @@ $duration = $row['duration'];
 
 
 
-                <label for=""></label>
+             
 
             </div>
         </div>

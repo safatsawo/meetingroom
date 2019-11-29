@@ -1,4 +1,4 @@
-<?php ob_start(); ?>
+  <?php ob_start(); ?>
 
 <?php
 include "INCLUDES/db.php"
@@ -112,7 +112,7 @@ include "INCLUDES/navigation.php"
                     </a>
                 </div>
                 <div class="col-md-6 col-lg-4 col-xlg-3">
-                    <a href="/pending-request2.php">
+                    <a href="/pending-request.php">
                         <div class="card card-hover">
                             <div class="box bg-danger text-center">
                                 <h1 class="font-light text-white"><i class="mdi mdi-border-outside"></i></h1>
@@ -122,93 +122,65 @@ include "INCLUDES/navigation.php"
                     </a>
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <div class="card">
-                        <!-- <div class="error bg-danger text-center text-white"> -->
-                        <?php 
-                      
-                     
-                       
-                       if(isset($_POST["submit"]) && ($_POST['email']=="" || $_POST['password']=="") ){
-                        
-                        echo '<div class="alert alert-danger alert-dismissable fade show" id="flash-msg">
-                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                     <h4><i class="icon fa fa-check"></i>FIELDS ARE EMPTY!</h4>
-                      </div>';  
-                        
-                       }
-                      elseif(isset($_POST["submit"]) && ($_POST['email']!="Safatsawo@gmail.com" || $_POST['password']!="Appleboss1") ){
-                                echo $failed = '<div class="alert alert-danger alert-dismissable fade show" id="flash-msg">
-                                <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                             <h4><i class="icon fa fa-check"></i>wrong details!</h4>
-                              </div>';
-                        }elseif(isset($_POST["submit"]) && ($_POST['email']=="Safatsawo@gmail.com" && $_POST['password']=="Appleboss1")){
-                             header("Location: users.php");
-                             
-                                }
-                        ?>
-             
-                </div>
-            </div>
-        </div>
-        <!-- ============================================================== -->
-        <!-- Sales chart -->
-        <!-- ============================================================== -->
-        <?php
+           
+
+            <!-- ============================================================== -->
+            <!-- Sales chart -->
+            <!-- ============================================================== -->
+            <?php
 // include "INCLUDES/sales.php"
 ?>
-
-        <!-- ============================================================== -->
-        <!-- Sales chart -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Recent comment and chats -->
-        <!-- ============================================================== -->
-        <?php
+ 
+            <!-- ============================================================== -->
+            <!-- Sales chart -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Recent comment and chats -->
+            <!-- ============================================================== -->
+            <?php
 include "INCLUDES/latestposts.php"
 ?>
-        <!-- Card -->
-        <?php
+            <!-- Card -->
+            <?php
 include "INCLUDES/todolist.php"
 ?>
-        <!-- card -->
-        <?php
+            <!-- card -->
+            <?php
 include "INCLUDES/progressbox.php"
 ?>
-        <!-- card new -->
-        <?php
+            <!-- card new -->
+            <?php
 include "INCLUDES/newupdates.php"
 ?>
-        <!-- column -->
+            <!-- column -->
 
-        <!-- <div class="col-lg-6"> -->
-        <!-- Card -->
-        <?php
+            <!-- <div class="col-lg-6"> -->
+            <!-- Card -->
+            <?php
 // include "INCLUDES/chatsoption.php"
 ?>
-        <!-- card -->
-        <?php
+            <!-- card -->
+            <?php
 // include "INCLUDES/ourpartners.php"
 ?>
-        <!-- accoridan part -->
-        <?php
+            <!-- accoridan part -->
+            <?php
 // include "INCLUDES/accordion.php"
 ?>
-        <!-- toggle part -->
-        <?php
+            <!-- toggle part -->
+            <?php
 // include "INCLUDES/toggle.php"
 ?>
-        <!-- Tabs -->
-        <?php
+            <!-- Tabs -->
+            <?php
 // include "INCLUDES/tabs.php"
 ?>
 
+        </div>
     </div>
-</div>
-<!-- ============================================================== -->
-<!-- Recent comment and chats -->
-<!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Recent comment and chats -->
+    <!-- ============================================================== -->
 </div>
 <!-- ============================================================== -->
 <!-- End Container fluid  -->
@@ -247,7 +219,7 @@ include "INCLUDES/footer.php"
                 </button>
             </div>
             <div class="modal-body">
-
+    
                 <?php
             // if(isset($_GET['id'])){
             // $the_id = $_GET['id'];
@@ -262,36 +234,70 @@ include "INCLUDES/footer.php"
             // $email = $row['email'];
             // $password = $row['password'];
             // }
+        //     $another =  '<div class="alert alert-danger alert-dismissable fade show" id="flash-msg">
+        //     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+        //  <h4><i class="icon fa fa-check"></i>FIELDS ARE EMPTY!</h4>
+        //   </div>';
+            if(isset($_POST['submit'])){
+                $username = $_POST['email'];
+                $password = $_POST['password'];
+
+               $db_username = mysqli_real_escape_string($connection,$username);
+               $db_password = mysqli_real_escape_string($connection,$password);
+
+               $query = "SELECT * FROM admini WHERE email = '{$db_username}' ";
+               $select_admin_query = mysqli_query($connection,$query);
+               if(!$select_admin_query){
+                   die("QUERY FAILED".mysqli_error($connection));
+               }
+while($row = mysqli_fetch_array($select_admin_query)){
+    $id = $row['id'];
+    $first_name = $row['first_name'];
+    $last_name = $row['last_name'];
+    $db_email = $row['email'];
+    $password = $row['password'];
+}
+if($db_username !== $db_email && $db_password !== $password){
+    header("Location:users.php  ");
+
+}
             
-            // if(isset($_POST['submit'])){
-            //     if($_POST['email']=="" || $_POST['password']==""){
-            //    echo  $another = '<div class="alert alert-danger alert-dismissable fade show" id="flash-msg">
-            //         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-            //      <h4><i class="icon fa fa-check"></i>FIELDS ARE EMPTY!</h4>
-            //       </div>';
-            
-                // }elseif($_POST['email']!="Safatsawo@gmail.com" && $_POST['password']!="Appleboss1"){
-                //     echo $failed = '<div class="alert alert-danger alert-dismissable fade show" id="flash-msg">
+                // echo $username = $_POST['email'];
+                // echo $password = $_POST['password'];
+                // if($_POST['email']=="" || $_POST['password']==""){
+                //     echo $another;
+                //     // header("Location:users.php");
+                // }elseif(isset($_post['submit'])){
+                    // $the_id=$id;
+                // }elseif($_POST['email']!="safatsawo@gmail.com" && $_POST['password']!="Appleboss1"){
+                //     echo '<div class="alert alert-danger alert-dismissable fade show" id="flash-msg">
                 //     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                 //  <h4><i class="icon fa fa-check"></i>wrong details!</h4>
                 //   </div>';
 
                 // }elseif($_POST['email']=="Safatsawo@gmail.com" && $_POST['password']=="Appleboss1"){
-                //  header("Location: users.php");
-                 
+
+                   
+
+                //     } else {
+                //     $message = "Invalid Username or Password!";
                 //     }
-                    
-                    
+                    }
+                    if(isset($_SESSION["email"])) {
+                    header("Location:users.php");
+// 
+// header("Location: users.php" );
+// $query = INSERT INTO admini($first_name)
+                }
 ?>
-                <form action="" method="POST" name="submit" class="form-inline">
+                <form action="users.php" method="POST" name="submit" class="form-inline">
                     <div class="form-group mb-2">
                         <label for="Email" class="sr-only">Email</label>
                         <input type="email" name="email" class="form-control" id="Email" placeholder="email">
                     </div>
                     <div class="form-group mx-sm-3 mb-2">
                         <label for="inputPassword2" class="sr-only">Password</label>
-                        <input type="password" name="password" class="form-control" id="inputPassword2"
-                            placeholder="Password">
+                        <input type="password"name="password" class="form-control" id="inputPassword2" placeholder="Password">
                     </div>
             </div>
             <div class="modal-footer">
@@ -304,11 +310,10 @@ include "INCLUDES/footer.php"
     </div>
 </div>
 <script type="text/javascript">
-    function openModal() {
-        $('#exampleModalCenter').modal({
-            show: true
-        });
-    }
+
+function openModal() {  
+    $('#exampleModalCenter').modal({ show: true });
+}
 </script>
 <script src="assets/libs/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap tether Core JavaScript -->
