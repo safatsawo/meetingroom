@@ -1,9 +1,9 @@
 
 <?php
-include "INCLUDES/db.php"
+require_once "INCLUDES/db.php"
 ?>
 <?php
-include "INCLUDES/header.php"
+require_once "INCLUDES/header.php"
 ?>
 
 
@@ -84,7 +84,7 @@ include "INCLUDES/navigation.php"
                 <!-- Column -->
                 <!-- Column -->
                   <div class="col-md-6 col-lg-4 col-xlg-3">
-                    <a href="./index.php">
+                    <a href="./users.php">
                         <div class="card card-hover shadow">
                             <div class="box bg-cyan text-center">
                                 <h1 class="font-light text-white"><i class="mdi mdi-view-dashboard"></i></h1>

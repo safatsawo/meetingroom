@@ -2,14 +2,11 @@
 
 
 <?php
-include "INCLUDES/db.php"
-?>
-<?php
-include "INCLUDES/header.php"
-?>
+include "INCLUDES/db.php";
 
-<?php
-// include_once "/INCLUDES/file.php"
+include "INCLUDES/header.php";
+
+include_once "switch.php";
 ?>
 <!-- ============================================================== -->
 <!-- Preloader - style you can find in spinners.css -->
@@ -70,6 +67,8 @@ include "INCLUDES/navigation.php"
                                 <li class="breadcrumb-item active" aria-current="page">Library</li>
                             </ol>
                         </nav> -->
+                    <!-- < type="button" id="submit" value="button"> -->
+                    <!-- <button id="submit" class="btn btn-primary">but</button> -->
                     </div>
                 </div>
             </div>
@@ -108,7 +107,7 @@ include "INCLUDES/navigation.php"
 
                                 </tr>
                             </thead>
-                            <tbody>
+                             <tbody>
 
 
 
@@ -152,10 +151,10 @@ while ($row = mysqli_fetch_assoc($select_meeting_query)) {
 switch ($Status) {
 
         case '0':
-            echo "<td><button type='submit' name='submit' class='btn btn-success'>APPROVE</button></td> ";
+            echo "<td><button id='submit' type='button' class='btn btn-success action' data-type='approve' data-id='$id'>APPROVE</button></td> ";
             break;
         default:
-            echo "<td><button type='submit' name='submit' class='btn btn-danger'>UNAPPROVE</button></td>";
+            echo "<td><button id='submit' type='button' class='btn btn-danger action' data-type='unapprove' data-id='$id'>UNAPPROVE</button></td>";
 
     }
     ?>
@@ -171,22 +170,8 @@ switch ($Status) {
                         </table>
                         <?php
 
-if (isset($_POST['id'])) {
-
-    if ($_POST['is_accepted'] == '1') {
-        $query = "UPDATE Request SET is_accepted = '0' WHERE id = {$_POST['id']}";
-        $approve_query = mysqli_query($connection, $query);
-        header("Location: pending-request.php");
-    } else {
-        $query = "UPDATE Request SET is_accepted = '1' WHERE id = {$_POST['id']}";
-        $approve_query = mysqli_query($connection, $query);
-        header("Location: pending-request.php");
-    }
-
-}
-
 ?>
-                        </<a>
+
                     </div>
                 </div>
             </div>
@@ -224,8 +209,12 @@ if (isset($_POST['id'])) {
 <!-- ============================================================== -->
 <!-- ============================================================== -->
 <!-- All Jquery -->
-<!-- ============================================================== -->
+<!-- ============================================================== -->\
+<!--  -->
 <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+<script src="assets/libs/jquery/dist/submit.js"></script>
+
+
 <!-- Bootstrap tether Core JavaScript -->
 <script src="assets/libs/popper.js/dist/umd/popper.min.js"></script>
 <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -246,7 +235,3 @@ if (isset($_POST['id'])) {
     /****************************************
      *       Basic Table                   *
      ****************************************/
-    y >
-
-        <
-        /html>

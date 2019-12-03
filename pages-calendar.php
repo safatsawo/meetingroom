@@ -93,26 +93,26 @@ include "INCLUDES/navigation.php"
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div id="calendar-events" class="">
-                                                        <div class="calendar-events m-b-20" data-class="bg-info"><i
+                                                        <!-- <div class="calendar-events m-b-20" data-class="bg-info"><i
                                                                 class="fa fa-circle text-info m-r-10"></i>Event One
-                                                        </div>
+                                                        </div> -->
                                                         <div class="calendar-events m-b-20" data-class="bg-success"><i
-                                                                class="fa fa-circle text-success m-r-10"></i> Event Two
+                                                                class="fa fa-circle text-success m-r-10"></i> Accepted Request
                                                         </div>
                                                         <div class="calendar-events m-b-20" data-class="bg-danger"><i
-                                                                class="fa fa-circle text-danger m-r-10"></i>Event Three
-                                                        </div>
-                                                        <div class="calendar-events m-b-20" data-class="bg-warning"><i
+                                                                class="fa fa-circle text-danger m-r-10"></i>Declined Request
+                                                        </div><span>50</span>
+                                                        <!-- <div class="calendar-events m-b-20" data-class="bg-warning"><i
                                                                 class="fa fa-circle text-warning m-r-10"></i>Event Four
-                                                        </div>
+                                                        </div> -->
                                                     </div>
                                                     <!-- checkbox -->
-                                                    <div class="custom-control custom-checkbox">
+                                                    <!-- <div class="custom-control custom-checkbox">
                                                         <input type="checkbox" class="custom-control-input"
                                                             id="drop-remove">
                                                         <label class="custom-control-label" for="drop-remove">Remove
                                                             after drop</label>
-                                                    </div>
+                                                    </div> -->
                                                     <a href="javascript:void(0)" data-toggle="modal"
                                                         data-target="#add-new-event"
                                                         class="btn m-t-20 btn-info btn-block waves-effect waves-light">
