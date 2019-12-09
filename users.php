@@ -83,12 +83,26 @@ include "INCLUDES/navigation.php"
             <div class="row">
                 <!-- Column -->
                 <!-- Column -->
-                  <div class="col-md-6 col-lg-4 col-xlg-3">
-                    <a href="./users.php">
-                        <div class="card card-hover shadow">
-                            <div class="box bg-cyan text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-view-dashboard"></i></h1>
-                                <h6 class="text-white">Dashboard</h6>
+                <div class="col-md-6 col-lg-4 col-xlg-3">
+                    <a href="./index.php">
+                        <div class="card card-hover">
+                            <div class="box bg-secondary text-left d-flex justify-content-around">
+                                <div class="dash d-flex flex-column">
+                                    <h1 class="font-light text-white"><i class="mdi mdi-view-dashboard"></i></h1>
+                                    <h6 class="text-white">Dashboard</h6>
+                                </div>
+                                <div class="huge text-right text-white">
+
+                                    <?php
+
+$query = "SELECT * FROM Request";
+$select_all_post = mysqli_query($connection, $query);
+$post_counts = mysqli_num_rows($select_all_post);
+
+echo "<h5> <div class='col-xs-9 text-right'>{$post_counts}</div>Posts</h5>";
+?>
+                                </div>
+
                             </div>
                         </div>
                     </a>
@@ -97,27 +111,51 @@ include "INCLUDES/navigation.php"
 
                   <div class="col-md-6 col-lg-4 col-xlg-3">
                     <a href="./form-basic.php">
-                        <div class="card card-hover shadow">
-                            <div class="box bg-primary text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-receipt"></i></h1>
-                                <h6 class="text-white">Forms</h6>
+                        <div class="card card-hover">
+                            <div class="box bg-primary text-left d-flex justify-content-around">
+                                <div class="dash d-flex flex-column">
+                                    <h1 class="font-light text-white"><i class="mdi mdi-receipt"></i></h1>
+                                    <h6 class="text-white">Forms</h6>
+                                </div>
+                                <div class="huge text-right text-white">
+                                    <?php
+
+$query ="SELECT * FROM Request";
+$select_all_post = mysqli_query($connection,$query);
+$post_counts = mysqli_num_rows($select_all_post);
+
+echo "<h5><div class='col-xs-9 text-right'>{$post_counts}</div>Posts</h5>";
+?>
+
+                                </div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="col-md-6 col-lg-4 col-xlg-3">
-                    <a href="/pending-request.php">
-                        <div class="card card-hover shadow">
-                            <div class="box bg-danger text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-border-outside"></i></h1>
-                                <h6 class="text-white">Tables</h6>
+                    <a href="/pending-request2.php">
+                        <div class="card card-hover">
+                            <div class="box bg-danger text-left d-flex justify-content-around">
+                                <div class="dash d-flex flex-column">
+                                    <h1 class="font-light text-white"><i class="mdi mdi-border-outside"></i></h1>
+                                    <h6 class="text-white">Tables</h6>
+                                </div>
+                                <div class="huge  text-white">
+                                <?php
+
+$query ="SELECT * FROM Request WHERE is_accepted = '1'";
+$select_all_accepted= mysqli_query($connection,$query);
+$post_count_accepted = mysqli_num_rows($select_all_accepted);
+
+echo " <h5><div class='col-xs-9'>{$post_count_accepted}</div>Posts Accepted</h5>";
+?>
+                                </div>
                             </div>
                         </div>
                     </a>
                 </div>
-                
             </div>
-            <!-- ============================================================== -->
+             <!-- ============================================================== -->
             <!-- Sales chart -->
             <!-- ============================================================== -->
             <?php

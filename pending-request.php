@@ -145,13 +145,13 @@ while ($row = mysqli_fetch_assoc($select_meeting_query)) {
 
                                     <form action='pending-request.php' method='post'>
                                         <input type="hidden" name="is_accepted" value=<?php echo "$Status"; ?> />
-                                        <input type="hidden" name="id" value=<?=$id;?> />
+                                        <input type="hidde n" name="id" value=<?=$id;?> />
 
                                         <?php
 switch ($Status) {
 
         case '0':
-            echo "<td><button id='submit' type='button' class='btn btn-success action' data-type='approve' data-id='$id'>APPROVE</button></td> ";
+            echo "<td><button id='submit' type='button' class='btn btn-success action' data-type='approve' data-id='$id'>APPROVE</button></td>";
             break;
         default:
             echo "<td><button id='submit' type='button' class='btn btn-danger action' data-type='unapprove' data-id='$id'>UNAPPROVE</button></td>";

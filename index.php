@@ -105,7 +105,7 @@ $query = "SELECT * FROM Request";
 $select_all_post = mysqli_query($connection, $query);
 $post_counts = mysqli_num_rows($select_all_post);
 
-echo " <div class='col-xs-9 text-right'>{$post_counts}</div>Posts";
+echo "<h5> <div class='col-xs-9 text-right'>{$post_counts}</div>Posts</h5>";
 ?>
                                 </div>
 
@@ -130,7 +130,7 @@ $query ="SELECT * FROM Request";
 $select_all_post = mysqli_query($connection,$query);
 $post_counts = mysqli_num_rows($select_all_post);
 
-echo " <div class='col-xs-9 text-right'>{$post_counts}</div>Posts";
+echo "<h5><div class='col-xs-9 text-right'>{$post_counts}</div>Posts</h5>";
 ?>
 
                                 </div>
@@ -153,7 +153,7 @@ $query ="SELECT * FROM Request WHERE is_accepted = '1'";
 $select_all_accepted= mysqli_query($connection,$query);
 $post_count_accepted = mysqli_num_rows($select_all_accepted);
 
-echo " <div class='col-xs-9'>{$post_count_accepted}</div>Posts Accepted";
+echo " <h5><div class='col-xs-9'>{$post_count_accepted}</div>Posts Accepted</h5>";
 ?>
                                 </div>
                             </div>

@@ -83,7 +83,7 @@
                             <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-bell font-24"></i>
                             </a>
                              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Notifications</a>
+                                <a class="dropdown-item" href="#">Notifications</a><sup>4</sup>
                                 <a class="dropdown-item" href="#">News</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/INCLUDES/todolist.php">Reminder</a>
